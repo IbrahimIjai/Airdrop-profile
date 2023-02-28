@@ -1,0 +1,935 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rajdhani:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+.main {
+  padding: 0 2vw;
+  background-image: url("/white.png");
+  background-color: #f0f0f0;
+  color: #000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .container {
+    position: relative;
+    .headerContainer {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      .imageContainer {
+        margin: 20px 0px;
+        position: relative;
+        width: 100%;
+        .image {
+          width: 100%;
+          padding-top: 100%;
+          span {
+            img {
+              border-radius: 1rem;
+              border: 1px solid black !important;
+              overflow: hidden;
+            }
+          }
+        }
+        .below {
+          z-index: 10;
+          position: absolute;
+          bottom: 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 0.5rem;
+          width: 100%;
+          padding: 1rem;
+          div {
+            cursor: pointer;
+          }
+        }
+
+        @media (min-width: 600px) {
+          width: 70%;
+          margin: 20px auto;
+        }
+      }
+      aside {
+        .openContent {
+          display: flex;
+          flex-direction: column;
+          margin: 10px 0;
+          border-radius: 12px;
+          padding: 2px;
+          .openContentDetails {
+            display: flex;
+            flex-direction: column;
+            font-family: "Inter Tight", sans-serif;
+            gap: 8px;
+            p {
+              font-size: 18px;
+              display: flex;
+              gap: 7px;
+            }
+            em {
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+              a {
+                display: flex;
+                gap: 10px;
+                font-weight: 600;
+                font-style: normal;
+                align-items: center;
+              }
+            }
+          }
+          @media (min-width: 750px) {
+            flex-direction: row;
+          }
+        }
+        .purchase {
+          border-radius: 24px;
+          border: solid 1px #e6e6e6;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          gap: 6px;
+          justify-content: space-around;
+          box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+          .offers {
+            display: flex;
+            padding: 16px;
+            flex-direction: column;
+            p {
+              padding-bottom: 8px;
+              letter-spacing: 0;
+              font-size: 16px;
+              span {
+                margin-left: 0.4em;
+                color: #666;
+              }
+            }
+            .offerButton {
+              background-color: transparent;
+              border-radius: 12px;
+              border: solid 2px #e6e6e6;
+              color: #000;
+              display: block;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              font-weight: 500;
+              font-size: clamp(16px, 1.2rem, 2.1vw);
+              transition: all 200ms ease-in-out;
+              width: 100%;
+              height: 52px;
+              &:hover {
+                background-color: black;
+                color: white;
+              }
+            }
+            @media (min-width: 600px) {
+              flex-direction: row;
+              p {
+                display: flex;
+                align-items: center;
+                flex: 1;
+              }
+              .offerButton {
+                flex: 1;
+              }
+            }
+          }
+          .buy {
+            padding: 16px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #e6e6e6;
+            .valuePlaceholder {
+              display: flex;
+              align-items: center;
+              position: relative;
+              margin-bottom: 12px;
+              gap: 3px;
+              span {
+                margin-left: 10px;
+              }
+            }
+            span {
+              color: #666;
+              letter-spacing: 0;
+              font-weight: 600;
+            }
+            h3 {
+              font-weight: 600;
+              font-size: clamp(18px, 1.9rem, 2.8vw);
+              span {
+                font-weight: 200;
+                font-size: clamp(16px, 1.2rem, 2.1vw);
+              }
+            }
+            .ownerActive {
+              height: 52px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+              .ownerActiveUpdate {
+                height: 52px;
+                border-radius: 12px;
+                width: 100%;
+                background: #000;
+                border: 2px solid #000;
+                color: white;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: clamp(16px, 1.2rem, 2.1vw);
+                transition: all 500ms ease-in-out;
+                &:hover {
+                  transform: translate(2px, -3px);
+                  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+                }
+              }
+              .ownerActiveCancel {
+                height: 52px;
+                border-radius: 12px;
+                width: 100%;
+                background: #e73434;
+                border: 2px solid #b3b3b3;
+                color: #fff;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: clamp(16px, 1.2rem, 2.1vw);
+                transition: all 500ms ease-in-out;
+                &:hover {
+                  transform: translate(2px, -3px);
+                  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+                }
+              }
+            }
+            .buyButton {
+              height: 52px;
+              border-radius: 12px;
+              width: 100%;
+              background: #000;
+              border: 2px solid #000;
+              color: white;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              font-weight: 600;
+              font-size: clamp(16px, 1.2rem, 2.1vw);
+              transition: all 500ms ease-in-out;
+              &:hover {
+                transform: translate(2px, -3px);
+                box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+              }
+            }
+          }
+          .timestamp {
+            padding: 0.75rem 0 0;
+            color: #666;
+            letter-spacing: 0;
+            font-weight: 600;
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+      }
+      @media (min-width: 800px) {
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+        .imageContainer {
+          flex: 1;
+        }
+        aside {
+          flex: 1.3;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+      }
+    }
+    .bodyContainer {
+      .openOffers {
+        .box {
+          width: 100%;
+          margin: 20px 0;
+          .head {
+            h2 {
+              font-size: clamp(14px, 16px, 18px);
+              font-weight: 600;
+              width: fit-content;
+              border-bottom: 3px solid black;
+              padding: 6px;
+            }
+          }
+          .body {
+            animation: 300ms cubic-bezier(0.25, 1, 0.35, 1) 0s 1 normal forwards
+              running;
+            div {
+              padding: 24px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              .offerHead {
+                font-size: clamp(16px, 1.2rem, 2.1vw);
+                font-weight: 600;
+                color: rgb(1, 20, 42);
+                letter-spacing: -0.02em;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                padding: 0;
+                margin-bottom: 20px;
+                h4 {
+                  flex: 1;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  font-weight: 400;
+                  text-align: center;
+                  padding: 0 2px;
+                }
+              }
+              .offerBody {
+                font-size: clamp(16px, 1.2rem, 2.1vw);
+                font-weight: 200;
+                display: flex;
+                padding: 0;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                color: rgb(1, 20, 42);
+                letter-spacing: -0.02em;
+                margin-bottom: 10px;
+                .offersContainer {
+                  display: flex;
+                  flex-direction: column;
+                  padding: 5px 0;
+                  flex: 1;
+                  align-items: center;
+                  gap: 10px;
+                  transition: all 500ms ease-in-out;
+                  &:hover {
+                    transform: translateY(-2px);
+                  }
+                  .function {
+                    padding: 0;
+                  }
+                }
+                p {
+                  flex: 1;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-align: center;
+                  font-size: 17px;
+                  padding: 0 2px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .nftMetadata {
+        .box {
+          width: 100%;
+          margin: 20px 0;
+          .head {
+            h2 {
+              font-size: clamp(14px, 16px, 18px);
+              font-weight: 600;
+              width: fit-content;
+              border-bottom: 3px solid black;
+              padding: 6px;
+            }
+          }
+          .body {
+            animation: 300ms linear 0s 1 normal forwards running;
+            .bodyContainer {
+              padding: 24px;
+              .bodyContent {
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1.5;
+                flex-direction: column;
+                font-size: 15px;
+                // aside {
+                //   display: flex;
+                //   align-content: space-around;
+                //   align-items: baseline;
+                //   justify-content: space-between;
+                //   width: 100%;
+                //   h2 {
+                //     font-size: 20px;
+                //     font-family: "Rajdhani", sans-serif;
+                //     flex: 1;
+                //   }
+                //   p {
+                //     font-size: 17px;
+                //     font-family: "Playfair Display", serif;
+                //     flex: 1;
+                //     width: 100%;
+                //     align-items: center;
+                //     display: flex;
+                //     justify-content: space-around;
+                //   }
+                // }
+              }
+              .bodyAttributes {
+                display: grid;
+                width: 100%;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                align-items: center;
+                aside {
+                  padding: 8px;
+                  div {
+                    background-color: #292727;
+                    color: white;
+                    padding: 8px 16px;
+                    border-radius: 10px;
+                    border: 1px solid #2d2d3a;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    h2 {
+                      font-size: 11px;
+                      text-transform: uppercase;
+                    }
+                    p {
+                      font-size: 15px;
+                      font-weight: 500;
+                      line-height: 30px;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      white-space: nowrap;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 750px) {
+        display: flex;
+        gap: 20px;
+        .openOffers {
+          flex: 1;
+          order: 2;
+        }
+        .nftMetadata {
+          flex: 1;
+        }
+      }
+    }
+    .footerContainer {
+      border-radius: 12px;
+      padding-bottom: 10px;
+      .moreItems {
+        width: 100%;
+        .head {
+          h2 {
+            font-size: clamp(14px, 16px, 18px);
+            font-weight: 600;
+            width: fit-content;
+            border-bottom: 3px solid black;
+            padding: 6px;
+          }
+        }
+        .SliderContainer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+}
+
+//More from the collection
+
+.cards {
+  padding: 15px 0;
+  display: flex;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(170px, max-content));
+  overflow-x: auto;
+  a {
+    background-color: #000;
+    padding: 10px;
+    border-radius: 1rem;
+    .imageContainer {
+      position: relative;
+      height: 230px;
+      width: 220px;
+      border-radius: 1rem;
+      overflow: hidden;
+      margin-bottom: 5px;
+      transition: all 400ms ease-in;
+      span img {
+        transition: all 0.5s ease-in-out;
+      }
+      &:hover > span img {
+        transform: scale(1.06);
+      }
+    }
+    .description {
+      font-size: 14px;
+      padding: 0 5px;
+      text-overflow: clip;
+      margin: 0;
+      color: #fff;
+    }
+    span {
+      font-size: 13px;
+      padding: 0 5px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+.cards::-webkit-scrollbar {
+  display: none;
+}
+
+@media (hover), (print: fine) {
+  .cards {
+    &::-webkit-scrollbar {
+      height: 5px;
+      display: block;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: transparent;
+    }
+    &:hover::-webkit-scrollbar-thumb {
+      background-color: #666;
+    }
+  }
+}
+.verified {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  span {
+    font-weight: 300;
+    font-size: 15px;
+  }
+}
+// Modals menu
+
+.createListingModal {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 95px 24px;
+  height: 100vh;
+  inset: 0px;
+  overflow: auto;
+  display: flex;
+  transform: translate3d(0px, 0px, 0px);
+  will-change: opacity;
+  color: black;
+  backface-visibility: hidden;
+  backdrop-filter: blur(20px);
+  perspective: 1000px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  overflow: hidden;
+  z-index: 2222;
+  .closeModal {
+    display: flex;
+    position: fixed;
+    color: white;
+    top: 62px;
+    right: 24px;
+    background-color: black;
+    transform: none;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    font-size: 30px;
+    justify-content: center;
+    border-radius: 99999px;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    will-change: transform;
+    transition: transform 0.2s ease 0s;
+    &:hover {
+      transform: scale(1.1);
+    }
+    @media (max-width: 580px) {
+      top: 92px;
+      right: 4px;
+    }
+  }
+  .actualModal {
+    opacity: 1;
+    transform: none;
+    outline: none;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    .purchaseUSDT {
+      font-size: clamp(1.1rem, 1.3vw, 1.42rem);
+      padding: 1rem 0.4rem;
+      transition: all 300ms ease-in-out;
+      margin: 10px 0;
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex-direction: row;
+      }
+      .arrow {
+        opacity: 0;
+        padding-left: 0.5rem;
+        transition: opacity 300ms ease-in-out;
+      }
+      &:hover {
+        .arrow {
+          opacity: 1;
+        }
+      }
+    }
+    .internalModal {
+      padding: 10px;
+      padding-top: 30px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      input {
+        font-weight: 600;
+        margin-bottom: 16px;
+        text-align: center;
+        font-size: 32px;
+        letter-spacing: -0.02em;
+        width: min(100%, 400px);
+      }
+      .input {
+        border: solid 1.5px #9e9e9e;
+        border-radius: 0.35rem;
+        background: none;
+        padding: 0.75rem;
+        font-size: 1rem;
+        color: #000;
+        transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .cta {
+        border-radius: 4px;
+        width: fit-content;
+        padding: 0.4rem 1rem;
+        background: #000;
+        border: 2px solid #000;
+        color: white;
+        margin: 0 auto;
+        cursor: pointer;
+        font-size: clamp(16px, 1.2rem, 1.5vw);
+        transition: all 500ms ease-in-out;
+        &:hover {
+          background-color: #fff;
+          font-weight: 400;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+// transaction modal
+.loadingModal {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 95px 24px;
+  height: 100vh;
+  inset: 0px;
+  overflow: auto;
+  display: flex;
+  transform: translate3d(0px, 0px, 0px);
+  will-change: opacity;
+  color: black;
+  backface-visibility: hidden;
+  backdrop-filter: blur(20px);
+  perspective: 1000px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9222;
+  p {
+    padding-top: 30px;
+    color: #2fc0db;
+    color: #fff;
+  }
+}
+.PageLoadingModal {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 95px 24px;
+  height: 100vh;
+  inset: 0px;
+  overflow: auto;
+  display: flex;
+  transform: translate3d(0px, 0px, 0px);
+  will-change: opacity;
+  color: white;
+  backface-visibility: hidden;
+  backdrop-filter: blur(20px);
+  perspective: 1000px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 2222;
+  background-image: url(../public/star.svg);
+  flex-direction: column;
+}
+.loadingText {
+  position: relative;
+  font-size: clamp(16px, 1.2rem, 2.1vw);
+  font-family: "Major Mono Display", monospace;
+  h1 {
+    position: relative;
+    letter-spacing: 5px;
+    padding-top: 30px;
+    color: #fff;
+    overflow: hidden;
+  }
+}
+// Error modal
+.errorModalContainer {
+  width: 100%;
+  position: fixed;
+  bottom: 6%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .errorModal {
+    border-radius: 7px;
+    background-color: #292727;
+    color: #e6e6e6;
+    width: fit-content;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    .dexLink {
+      color: #2fc0db;
+    }
+  }
+}
+
+// modal for new listing
+.createListing {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 95px 24px;
+  height: 100vh;
+  inset: 0px;
+  overflow: auto;
+  display: flex;
+  transform: translate3d(0px, 0px, 0px);
+  will-change: opacity;
+  color: black;
+  backface-visibility: hidden;
+  backdrop-filter: blur(20px);
+  perspective: 1000px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 2222;
+  .actualModal {
+    background-color: #fff;
+    padding: 1rem 0;
+    border-radius: 10px;
+    .closeModal {
+      top: 0;
+      right: 10px;
+      color: black;
+      width: auto;
+      height: auto;
+      position: absolute;
+      cursor: pointer;
+      will-change: transform;
+      transition: transform 0.2s ease 0s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    .details {
+      padding: 0.5rem 1rem;
+      .cImage {
+        border-radius: 100%;
+        overflow: hidden;
+      }
+    }
+    .selectors {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0 1rem;
+      div {
+        background-color: #1f202e;
+        opacity: 0.8;
+        color: white;
+        text-align: center;
+        border: none;
+        width: fit-content;
+        margin: 10px auto;
+        padding: 0.5rem 1rem;
+        border-radius: 7px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .divSelector {
+        transition: all 350ms ease-in-out;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .divSelectorActive {
+        opacity: 1;
+      }
+    }
+  }
+  .internalModal {
+    padding: 10px;
+    padding-top: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    input {
+      font-weight: 600;
+      text-align: center;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+      min-width: 300px;
+    }
+    .input {
+      border: solid 1.5px #9e9e9e;
+      border-radius: 0.35rem;
+      background: none;
+      padding: 0.75rem;
+      font-size: 14px;
+      color: #000;
+      transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+  .cta {
+    border-radius: 4px;
+    width: fit-content;
+    padding: 0.3rem 1rem;
+    background: #000;
+    border: 2px solid #000;
+    color: white;
+    margin: 0 auto;
+    cursor: pointer;
+    font-size: clamp(16px, 1.2rem, 2.1vw);
+    transition: all 500ms ease-in-out;
+    &:hover {
+      background-color: #fff;
+      font-weight: 400;
+      color: #000;
+    }
+  }
+  .filters {
+    position: relative;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .filterCurrent {
+      margin: 15px 0;
+      cursor: pointer;
+      border-radius: 7px;
+      width: 200px;
+      padding: 0.2rem 0.5rem;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: none;
+      border: 1px solid rgb(0, 0, 0, 0.9);
+    }
+    .filter {
+      border-radius: 7px;
+      position: absolute;
+      z-index: 12;
+      top: 0;
+      padding: 0.2rem 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      background: none;
+      background-color: rgba(13, 13, 13, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgb(0, 0, 0, 0.9);
+      opacity: 1;
+      gap: 0.5rem;
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 200px;
+        opacity: 0.8;
+        background: none;
+        cursor: pointer;
+        padding: 0.5rem 0.6rem;
+        transition: opacity 200ms ease-in;
+        color: #fff;
+        &:hover {
+          opacity: 1;
+          background-color: rgba(13, 13, 13);
+        }
+      }
+    }
+  }
+  .purchaseUSDT {
+    padding: 0.4rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+}

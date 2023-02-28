@@ -1,0 +1,303 @@
+.container {
+  .connect {
+    display: block;
+    cursor: pointer;
+    color: white;
+    font-weight: 400;
+    border-radius: 5rem;
+    font-size: 15px;
+  }
+  .disconnect {
+    display: block;
+    cursor: pointer;
+    color: white;
+    font-weight: 400;
+    border-radius: 5rem;
+    font-size: 15px;
+  }
+  .modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    inset: 0px;
+    display: flex;
+    transform: translateZ(0);
+    will-change: opacity;
+    color: black;
+    backface-visibility: hidden;
+    backdrop-filter: blur(20px);
+    perspective: 1000px;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2222;
+    cursor: default;
+    .closeModal {
+      display: flex;
+      position: absolute;
+      color: black;
+      top: 15px;
+      right: 15px;
+      transform: none;
+      width: 25px;
+      height: 25px;
+      align-items: center;
+      font-size: 20px;
+      justify-content: center;
+      border-radius: 99999px;
+      cursor: pointer;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      will-change: transform;
+      transition: transform 0.2s ease 0s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    .modalMenu {
+      opacity: 1;
+      position: relative;
+      transform: none;
+      outline: none;
+      border-radius: 24px;
+      width: min(90%, 350px);
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      .modalInternal {
+        padding: 20px 50px;
+        h1 {
+          font-size: clamp(1.75rem, 2.2vw, 2.2rem);
+          font-weight: 600;
+          margin-bottom: 16px;
+          text-align: center;
+          letter-spacing: -0.02em;
+        }
+        .tutorial {
+          color: #1890ff;
+          opacity: 0.8;
+          margin-bottom: 10px;
+          line-height: 1.5715;
+          word-wrap: break-word;
+          text-align: center;
+          transition: all 0.3s ease;
+          font-size: 14px;
+          letter-spacing: 0.35px;
+          &:hover {
+            color: blue;
+            opacity: 0.7;
+          }
+        }
+        .wallets {
+          display: grid;
+          gap: 32px;
+          margin-bottom: 22px;
+          p {
+            text-align: center;
+          }
+          .walletLists {
+            display: grid;
+            gap: 12px;
+            padding: 0 clamp(20px, 10px, 0px);
+            @media (max-width: 370px) {
+              padding: 0;
+            }
+            .walletList {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              text-align: center;
+              text-decoration: none;
+              border: none;
+              appearance: none;
+              font-size: 16px;
+              font-weight: 600;
+              border-radius: 12px;
+              cursor: pointer;
+              will-change: transform;
+              transition: all 500ms;
+              &:hover {
+                transform: scale(1.05);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .board {
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    inset: 0px;
+    color: black;
+    display: flex;
+    transform: translateZ(0);
+    will-change: opacity;
+    backface-visibility: hidden;
+    backdrop-filter: blur(20px);
+    perspective: 1000px;
+    // align-items: flex-end;
+    justify-content: flex-end;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 2222;
+    cursor: default;
+
+    .closeModal {
+      display: flex;
+      position: absolute;
+      color: black;
+      top: 15px;
+      right: 15px;
+      transform: none;
+      width: 25px;
+      height: 25px;
+      align-items: center;
+      font-size: 20px;
+      justify-content: center;
+      border-radius: 99999px;
+      cursor: pointer;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      will-change: transform;
+      transition: transform 0.2s ease 0s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    // @keyframes movemodal {
+    //   0% {
+    //     right: -100%;
+    //     opacity: .03;
+    //   }
+    //   100% {
+    //     right: 0%;
+    //     opacity: 1;
+    //   }
+    // }
+    .smallBoard {
+      position: relative;
+      opacity: 1;
+      transform: none;
+      outline: none;
+      border-radius: 7px;
+      width: min(100%, 350px);
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      padding: 50px;
+      padding-top: 17px;
+      height: 50%;
+      width: 60%;
+      // animation: movemodal .8s;
+
+      .head {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+        font-weight: 600;
+        margin-bottom: 16px;
+        text-align: center;
+        letter-spacing: -0.02em;
+      }
+      .text {
+        font-size: clamp(1rem, 1.5vw, 1.5rem);
+        font-weight: 400;
+        margin-bottom: 30px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        opacity: 0.8;
+      }
+      .userDetails {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 20px 0;
+        .address,
+        p {
+          width: 100%;
+          text-align: center;
+          font-size: clamp(0.9rem, 1rem, 1.2rem);
+          font-weight: 600;
+          letter-spacing: -0.02em;
+          opacity: 0.8;
+        }
+        .address,
+        .balance {
+          border-bottom: 1px solid grey;
+        }
+        .address {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 10px;
+          padding-bottom: 10px;
+          .icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-left: 10px;
+            position: relative;
+            .clipboard {
+              cursor: pointer;
+            }
+            a {
+              display: flex;
+            }
+            span {
+              font-size: 12px;
+              position: absolute;
+              top: -20px;
+              white-space: nowrap;
+              font-weight: 400;
+              opacity: 0.8;
+            }
+          }
+        }
+        .balance {
+          padding-bottom: 10px;
+        }
+        .balances {
+          margin-top: 10px;
+        }
+        p {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 5px;
+          white-space: nowrap;
+        }
+      }
+      button {
+        border: none;
+        color: white;
+        background: black;
+        padding: 0.65rem 2rem;
+        border-radius: 5px;
+        font-size: 18px;
+        margin-top: 5px;
+        cursor: pointer;
+        transition: all 120ms ease-in-out;
+        &:hover {
+          background: #333;
+        }
+      }
+    }
+  }
+}
+// #F0F4F5 for the background of wallets

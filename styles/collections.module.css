@@ -1,0 +1,205 @@
+.container {
+  padding-bottom: 8px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container .header {
+  display: flex;
+  margin-bottom: 16px;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+  gap: 16px;
+  border-bottom: 1px solid rgb(110, 110, 110);
+  box-shadow: rgb(110, 110, 110) 0px -1px 0px 0px inset;
+}
+.headerImage {
+  height: 220px;
+  width: 100%;
+  position: relative;
+}
+@media (max-width: 831px) {
+  .container .header {
+    gap: 0px;
+    box-shadow: none;
+  }
+}
+.container .header .headerContent {
+  padding: 10px 24px;
+  box-shadow: none;
+  flex-direction: column;
+  display: flex;
+  font-size: clamp(1.1rem, 1.3rem, 1.5vw);
+  font-weight: 500;
+}
+
+.container .collections {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-auto-flow: dense;
+  padding: 8px 24px 32px 24px;
+  gap: 16px;
+  margin: 0 auto;
+}
+@media (min-width: 800px) {
+  .container .collections {
+    gap: 24px;
+  }
+  .headerImage {
+    height: 300px;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .container .collections {
+    gap: 32px;
+  }
+}
+.container .collections .collection {
+  display: flex;
+  min-height: 490px;
+  flex-direction: column;
+  box-shadow: 0px 10px 20px rgba(250, 250, 250, 0.1);
+  cursor: pointer;
+  transform: translate3d(0px, 0px, 0px);
+  will-change: transform;
+  position: relative;
+  color: currentcolor;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: all 1000ms ease-in-out;
+  padding: 32px;
+  text-decoration: none;
+  background-position: center center;
+}
+.container .collections .collection .image {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* .container .collections .collection .imageHolster > span {
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(0, 0, 0, 0.438)
+  ) !important;
+} */
+
+.container .collections .collection:hover .imageHolster > span {
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(0, 0, 0, 0.438)
+  ) !important;
+}
+.container .collections .collection .image img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.container .collections .collection .content {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background: none;
+  border: none;
+  padding: 0px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    outline 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.container .collections .collection .content .topContent {
+  display: flex;
+}
+.container .collections .collection .content .topContent .topContentImage {
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  display: block;
+  position: relative;
+}
+.container
+  .collections
+  .collection
+  .content
+  .topContent
+  .topContentImage
+  .image {
+  width: 90px;
+  height: 90px;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  background-size: cover;
+  background-position: center center;
+}
+.container .collections .collection .content .topContent .topContentName {
+  margin-left: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.container .collections .collection .content .topContent .topContentName .name {
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: none;
+}
+.container
+  .collections
+  .collection
+  .content
+  .topContent
+  .topContentName
+  .name
+  span {
+  letter-spacing: 1px;
+}
+.container .collections .collection .content .bottomContent {
+  margin-top: 212px;
+  flex-direction: column;
+  display: flex;
+}
+.container .collections .collection .content .bottomContent .bottomHeader {
+  gap: 16px;
+  margin: 16px 0;
+  display: grid;
+}
+.container .collections .collection .content .bottomContent .bottomHeader h1 {
+  color: #2f2f2f;
+  word-break: break-word;
+  line-height: 1;
+  font-size: 36px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+.container .collections .collection .content .bottomContent .bottomHeader div {
+  opacity: 0.6;
+  color: #000;
+  font-size: 18px;
+  letter-spacing: 0;
+  font-weight: 600;
+} /*# sourceMappingURL=collections.module.css.map */

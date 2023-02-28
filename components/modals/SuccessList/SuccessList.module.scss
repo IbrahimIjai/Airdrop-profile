@@ -1,0 +1,118 @@
+.backdrop {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    .card {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.63);
+      border-radius: 16px;
+      width: min(70%, 400px);
+      color: black;
+      height: 60%;
+      @media (min-width:960px) {
+          height: 80%;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      padding: 1rem;
+      .icon {
+        // scale: ;
+        animation: pulse 2s infinite;
+        animation-timing-function: ease-in-out;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(0.8);
+        }
+        25% {
+          transform: scale(1.05);
+        }
+        50% {
+          transform: scale(1.12);
+        }
+        75% {
+          transform: scale(1.18);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .successtextcont {
+        margin-top: -2rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        .successText {
+          font-weight: 700;
+          font-size: 1.2rem;
+          color: rgb(68, 166, 68);
+        }
+        .cost {
+          font-weight: 700;
+          font-size: 1.2rem;
+        }
+      }
+      .wallet {
+        font-weight: 500;
+        display: flex;
+        //   align-items: center;
+        gap: 1rem;
+        justify-content: center;
+        p {
+          font-weight: 600;
+        }
+      }
+      .purchasedetails {
+        background-color: aliceblue;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.2rem 0;
+        height: 120px;
+        border-radius: 15px;
+        .nftimg {
+          position: relative;
+          height: 45px;
+          border-radius: 40%;
+          overflow: hidden;
+          width: 45px;
+        }
+        .nftdetails {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 75%;
+        }
+      }
+      .button {
+        width: 95%;
+        background-color: rgb(68, 166, 68);
+        padding: 1rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        border-radius: 15px;
+        transition: all 0.7s;
+        &:active {
+          scale: 0.92;
+        }
+      }
+    }
+  }
+  

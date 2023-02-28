@@ -1,0 +1,919 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rajdhani:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+.main {
+  padding: 0 2vw;
+  background-image: url("/white.png");
+  background-color: #f0f0f0;
+  color: #000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main .container {
+  position: relative;
+}
+.main .container .headerContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.main .container .headerContainer .imageContainer {
+  margin: 20px 0px;
+  position: relative;
+  width: 100%;
+}
+.main .container .headerContainer .imageContainer .image {
+  width: 100%;
+  padding-top: 100%;
+}
+.main .container .headerContainer .imageContainer .image span img {
+  border-radius: 1rem;
+  border: 1px solid black !important;
+  overflow: hidden;
+}
+.main .container .headerContainer .imageContainer .below {
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+}
+.main .container .headerContainer .imageContainer .below div {
+  cursor: pointer;
+}
+@media (min-width: 600px) {
+  .main .container .headerContainer .imageContainer {
+    width: 70%;
+    margin: 20px auto;
+  }
+}
+.main .container .headerContainer aside .openContent {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  border-radius: 12px;
+  padding: 2px;
+}
+.main .container .headerContainer aside .openContent .openContentDetails {
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter Tight", sans-serif;
+  gap: 8px;
+}
+.main .container .headerContainer aside .openContent .openContentDetails p {
+  font-size: 18px;
+  display: flex;
+  gap: 7px;
+}
+.main .container .headerContainer aside .openContent .openContentDetails em {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.main .container .headerContainer aside .openContent .openContentDetails em a {
+  display: flex;
+  gap: 10px;
+  font-weight: 600;
+  font-style: normal;
+  align-items: center;
+}
+@media (min-width: 750px) {
+  .main .container .headerContainer aside .openContent {
+    flex-direction: row;
+  }
+}
+.main .container .headerContainer aside .purchase {
+  border-radius: 24px;
+  border: solid 1px #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 6px;
+  justify-content: space-around;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
+.main .container .headerContainer aside .purchase .offers {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+}
+.main .container .headerContainer aside .purchase .offers p {
+  padding-bottom: 8px;
+  letter-spacing: 0;
+  font-size: 16px;
+}
+.main .container .headerContainer aside .purchase .offers p span {
+  margin-left: 0.4em;
+  color: #666;
+}
+.main .container .headerContainer aside .purchase .offers .offerButton {
+  background-color: transparent;
+  border-radius: 12px;
+  border: solid 2px #e6e6e6;
+  color: #000;
+  display: block;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: clamp(16px, 1.2rem, 2.1vw);
+  transition: all 200ms ease-in-out;
+  width: 100%;
+  height: 52px;
+}
+.main .container .headerContainer aside .purchase .offers .offerButton:hover {
+  background-color: black;
+  color: white;
+}
+@media (min-width: 600px) {
+  .main .container .headerContainer aside .purchase .offers {
+    flex-direction: row;
+  }
+  .main .container .headerContainer aside .purchase .offers p {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+  .main .container .headerContainer aside .purchase .offers .offerButton {
+    flex: 1;
+  }
+}
+.main .container .headerContainer aside .purchase .buy {
+  padding: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e6e6e6;
+}
+.main .container .headerContainer aside .purchase .buy .valuePlaceholder {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 12px;
+  gap: 3px;
+}
+.main .container .headerContainer aside .purchase .buy .valuePlaceholder span {
+  margin-left: 10px;
+}
+.main .container .headerContainer aside .purchase .buy span {
+  color: #666;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+.main .container .headerContainer aside .purchase .buy h3 {
+  font-weight: 600;
+  font-size: clamp(18px, 1.9rem, 2.8vw);
+}
+.main .container .headerContainer aside .purchase .buy h3 span {
+  font-weight: 200;
+  font-size: clamp(16px, 1.2rem, 2.1vw);
+}
+.main .container .headerContainer aside .purchase .buy .ownerActive {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.main .container .headerContainer aside .purchase .buy .ownerActive .ownerActiveUpdate {
+  height: 52px;
+  border-radius: 12px;
+  width: 100%;
+  background: #000;
+  border: 2px solid #000;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: clamp(16px, 1.2rem, 2.1vw);
+  transition: all 500ms ease-in-out;
+}
+.main .container .headerContainer aside .purchase .buy .ownerActive .ownerActiveUpdate:hover {
+  transform: translate(2px, -3px);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
+.main .container .headerContainer aside .purchase .buy .ownerActive .ownerActiveCancel {
+  height: 52px;
+  border-radius: 12px;
+  width: 100%;
+  background: #e73434;
+  border: 2px solid #b3b3b3;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: clamp(16px, 1.2rem, 2.1vw);
+  transition: all 500ms ease-in-out;
+}
+.main .container .headerContainer aside .purchase .buy .ownerActive .ownerActiveCancel:hover {
+  transform: translate(2px, -3px);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
+.main .container .headerContainer aside .purchase .buy .buyButton {
+  height: 52px;
+  border-radius: 12px;
+  width: 100%;
+  background: #000;
+  border: 2px solid #000;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: clamp(16px, 1.2rem, 2.1vw);
+  transition: all 500ms ease-in-out;
+}
+.main .container .headerContainer aside .purchase .buy .buyButton:hover {
+  transform: translate(2px, -3px);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
+.main .container .headerContainer aside .purchase .timestamp {
+  padding: 0.75rem 0 0;
+  color: #666;
+  letter-spacing: 0;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (min-width: 800px) {
+  .main .container .headerContainer {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+  .main .container .headerContainer .imageContainer {
+    flex: 1;
+  }
+  .main .container .headerContainer aside {
+    flex: 1.3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+.main .container .bodyContainer .openOffers .box {
+  width: 100%;
+  margin: 20px 0;
+}
+.main .container .bodyContainer .openOffers .box .head h2 {
+  font-size: 16px;
+  font-weight: 600;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-bottom: 3px solid black;
+  padding: 6px;
+}
+.main .container .bodyContainer .openOffers .box .body {
+  animation: 300ms cubic-bezier(0.25, 1, 0.35, 1) 0s 1 normal forwards running;
+}
+.main .container .bodyContainer .openOffers .box .body div {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main .container .bodyContainer .openOffers .box .body div .offerHead {
+  font-size: clamp(16px, 1.2rem, 2.1vw);
+  font-weight: 600;
+  color: rgb(1, 20, 42);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.main .container .bodyContainer .openOffers .box .body div .offerHead h4 {
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 400;
+  text-align: center;
+  padding: 0 2px;
+}
+.main .container .bodyContainer .openOffers .box .body div .offerBody {
+  font-size: clamp(16px, 1.2rem, 2.1vw);
+  font-weight: 200;
+  display: flex;
+  padding: 0;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  color: rgb(1, 20, 42);
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+.main .container .bodyContainer .openOffers .box .body div .offerBody .offersContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+  transition: all 500ms ease-in-out;
+}
+.main .container .bodyContainer .openOffers .box .body div .offerBody .offersContainer:hover {
+  transform: translateY(-2px);
+}
+.main .container .bodyContainer .openOffers .box .body div .offerBody .offersContainer .function {
+  padding: 0;
+}
+.main .container .bodyContainer .openOffers .box .body div .offerBody p {
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  font-size: 17px;
+  padding: 0 2px;
+}
+.main .container .bodyContainer .nftMetadata .box {
+  width: 100%;
+  margin: 20px 0;
+}
+.main .container .bodyContainer .nftMetadata .box .head h2 {
+  font-size: 16px;
+  font-weight: 600;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-bottom: 3px solid black;
+  padding: 6px;
+}
+.main .container .bodyContainer .nftMetadata .box .body {
+  animation: 300ms linear 0s 1 normal forwards running;
+}
+.main .container .bodyContainer .nftMetadata .box .body .bodyContainer {
+  padding: 24px;
+}
+.main .container .bodyContainer .nftMetadata .box .body .bodyContainer .bodyContent {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+  flex-direction: column;
+  font-size: 15px;
+}
+.main .container .bodyContainer .nftMetadata .box .body .bodyContainer .bodyAttributes {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  align-items: center;
+}
+.main .container .bodyContainer .nftMetadata .box .body .bodyContainer .bodyAttributes aside {
+  padding: 8px;
+}
+.main .container .bodyContainer .nftMetadata .box .body .bodyContainer .bodyAttributes aside div {
+  background-color: #292727;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid #2d2d3a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main .container .bodyContainer .nftMetadata .box .body .bodyContainer .bodyAttributes aside div h2 {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.main .container .bodyContainer .nftMetadata .box .body .bodyContainer .bodyAttributes aside div p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (min-width: 750px) {
+  .main .container .bodyContainer {
+    display: flex;
+    gap: 20px;
+  }
+  .main .container .bodyContainer .openOffers {
+    flex: 1;
+    order: 2;
+  }
+  .main .container .bodyContainer .nftMetadata {
+    flex: 1;
+  }
+}
+.main .container .footerContainer {
+  border-radius: 12px;
+  padding-bottom: 10px;
+}
+.main .container .footerContainer .moreItems {
+  width: 100%;
+}
+.main .container .footerContainer .moreItems .head h2 {
+  font-size: 16px;
+  font-weight: 600;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-bottom: 3px solid black;
+  padding: 6px;
+}
+.main .container .footerContainer .moreItems .SliderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.cards {
+  padding: 15px 0;
+  display: flex;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(170px, max-content));
+  overflow-x: auto;
+}
+.cards a {
+  background-color: #000;
+  padding: 10px;
+  border-radius: 1rem;
+}
+.cards a .imageContainer {
+  position: relative;
+  height: 230px;
+  width: 220px;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 5px;
+  transition: all 400ms ease-in;
+}
+.cards a .imageContainer span img {
+  transition: all 0.5s ease-in-out;
+}
+.cards a .imageContainer:hover > span img {
+  transform: scale(1.06);
+}
+.cards a .description {
+  font-size: 14px;
+  padding: 0 5px;
+  text-overflow: clip;
+  margin: 0;
+  color: #fff;
+}
+.cards a span {
+  font-size: 13px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+.cards::-webkit-scrollbar {
+  display: none;
+}
+
+@media (hover), (print: fine) {
+  .cards::-webkit-scrollbar {
+    height: 5px;
+    display: block;
+  }
+  .cards::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 5px;
+  }
+  .cards::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: transparent;
+  }
+  .cards:hover::-webkit-scrollbar-thumb {
+    background-color: #666;
+  }
+}
+.verified {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.verified span {
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.createListingModal {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 95px 24px;
+  height: 100vh;
+  inset: 0px;
+  overflow: auto;
+  display: flex;
+  transform: translate3d(0px, 0px, 0px);
+  will-change: opacity;
+  color: black;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  perspective: 1000px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  overflow: hidden;
+  z-index: 2222;
+}
+.createListingModal .closeModal {
+  display: flex;
+  position: fixed;
+  color: white;
+  top: 62px;
+  right: 24px;
+  background-color: black;
+  transform: none;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  font-size: 30px;
+  justify-content: center;
+  border-radius: 99999px;
+  cursor: pointer;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  will-change: transform;
+  transition: transform 0.2s ease 0s;
+}
+.createListingModal .closeModal:hover {
+  transform: scale(1.1);
+}
+@media (max-width: 580px) {
+  .createListingModal .closeModal {
+    top: 92px;
+    right: 4px;
+  }
+}
+.createListingModal .actualModal {
+  opacity: 1;
+  transform: none;
+  outline: none;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+.createListingModal .actualModal .purchaseUSDT {
+  font-size: clamp(1.1rem, 1.3vw, 1.42rem);
+  padding: 1rem 0.4rem;
+  transition: all 300ms ease-in-out;
+  margin: 10px 0;
+}
+.createListingModal .actualModal .purchaseUSDT a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: row;
+}
+.createListingModal .actualModal .purchaseUSDT .arrow {
+  opacity: 0;
+  padding-left: 0.5rem;
+  transition: opacity 300ms ease-in-out;
+}
+.createListingModal .actualModal .purchaseUSDT:hover .arrow {
+  opacity: 1;
+}
+.createListingModal .actualModal .internalModal {
+  padding: 10px;
+  padding-top: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.createListingModal .actualModal .internalModal input {
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  width: min(100%, 400px);
+}
+.createListingModal .actualModal .internalModal .input {
+  border: solid 1.5px #9e9e9e;
+  border-radius: 0.35rem;
+  background: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: #000;
+  transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.createListingModal .actualModal .internalModal .cta {
+  border-radius: 4px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.4rem 1rem;
+  background: #000;
+  border: 2px solid #000;
+  color: white;
+  margin: 0 auto;
+  cursor: pointer;
+  font-size: clamp(16px, 1.2rem, 1.5vw);
+  transition: all 500ms ease-in-out;
+}
+.createListingModal .actualModal .internalModal .cta:hover {
+  background-color: #fff;
+  font-weight: 400;
+  color: #000;
+}
+
+.loadingModal {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 95px 24px;
+  height: 100vh;
+  inset: 0px;
+  overflow: auto;
+  display: flex;
+  transform: translate3d(0px, 0px, 0px);
+  will-change: opacity;
+  color: black;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  perspective: 1000px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9222;
+}
+.loadingModal p {
+  padding-top: 30px;
+  color: #2fc0db;
+  color: #fff;
+}
+
+.PageLoadingModal {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 95px 24px;
+  height: 100vh;
+  inset: 0px;
+  overflow: auto;
+  display: flex;
+  transform: translate3d(0px, 0px, 0px);
+  will-change: opacity;
+  color: white;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  perspective: 1000px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 2222;
+  background-image: url(../public/star.svg);
+  flex-direction: column;
+}
+
+.loadingText {
+  position: relative;
+  font-size: clamp(16px, 1.2rem, 2.1vw);
+  font-family: "Major Mono Display", monospace;
+}
+.loadingText h1 {
+  position: relative;
+  letter-spacing: 5px;
+  padding-top: 30px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.errorModalContainer {
+  width: 100%;
+  position: fixed;
+  bottom: 6%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.errorModalContainer .errorModal {
+  border-radius: 7px;
+  background-color: #292727;
+  color: #e6e6e6;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+.errorModalContainer .errorModal .dexLink {
+  color: #2fc0db;
+}
+
+.createListing {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 95px 24px;
+  height: 100vh;
+  inset: 0px;
+  overflow: auto;
+  display: flex;
+  transform: translate3d(0px, 0px, 0px);
+  will-change: opacity;
+  color: black;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  perspective: 1000px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 2222;
+}
+.createListing .actualModal {
+  background-color: #fff;
+  padding: 1rem 0;
+  border-radius: 10px;
+}
+.createListing .actualModal .closeModal {
+  top: 0;
+  right: 10px;
+  color: black;
+  width: auto;
+  height: auto;
+  position: absolute;
+  cursor: pointer;
+  will-change: transform;
+  transition: transform 0.2s ease 0s;
+}
+.createListing .actualModal .closeModal:hover {
+  transform: scale(1.1);
+}
+.createListing .actualModal .details {
+  padding: 0.5rem 1rem;
+}
+.createListing .actualModal .details .cImage {
+  border-radius: 100%;
+  overflow: hidden;
+}
+.createListing .actualModal .selectors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+.createListing .actualModal .selectors div {
+  background-color: #1f202e;
+  opacity: 0.8;
+  color: white;
+  text-align: center;
+  border: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px auto;
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.createListing .actualModal .selectors .divSelector {
+  transition: all 350ms ease-in-out;
+}
+.createListing .actualModal .selectors .divSelector:hover {
+  opacity: 1;
+}
+.createListing .actualModal .selectors .divSelectorActive {
+  opacity: 1;
+}
+.createListing .internalModal {
+  padding: 10px;
+  padding-top: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.createListing .internalModal input {
+  font-weight: 600;
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  min-width: 300px;
+}
+.createListing .internalModal .input {
+  border: solid 1.5px #9e9e9e;
+  border-radius: 0.35rem;
+  background: none;
+  padding: 0.75rem;
+  font-size: 14px;
+  color: #000;
+  transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.createListing .cta {
+  border-radius: 4px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.3rem 1rem;
+  background: #000;
+  border: 2px solid #000;
+  color: white;
+  margin: 0 auto;
+  cursor: pointer;
+  font-size: clamp(16px, 1.2rem, 2.1vw);
+  transition: all 500ms ease-in-out;
+}
+.createListing .cta:hover {
+  background-color: #fff;
+  font-weight: 400;
+  color: #000;
+}
+.createListing .filters {
+  position: relative;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.createListing .filters .filterCurrent {
+  margin: 15px 0;
+  cursor: pointer;
+  border-radius: 7px;
+  width: 200px;
+  padding: 0.2rem 0.5rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+}
+.createListing .filters .filter {
+  border-radius: 7px;
+  position: absolute;
+  z-index: 12;
+  top: 0;
+  padding: 0.2rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: none;
+  background-color: rgba(13, 13, 13, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  opacity: 1;
+  gap: 0.5rem;
+}
+.createListing .filters .filter div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  opacity: 0.8;
+  background: none;
+  cursor: pointer;
+  padding: 0.5rem 0.6rem;
+  transition: opacity 200ms ease-in;
+  color: #fff;
+}
+.createListing .filters .filter div:hover {
+  opacity: 1;
+  background-color: rgb(13, 13, 13);
+}
+.createListing .purchaseUSDT {
+  padding: 0.4rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.createListing .purchaseUSDT a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}/*# sourceMappingURL=nftId.module.css.map */

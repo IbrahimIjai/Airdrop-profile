@@ -1,0 +1,81 @@
+.Options {
+  padding: 0.4rem 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  display: flex;
+  gap: 5px;
+  padding-bottom: 10px;
+}
+.Options div {
+  padding: 0.4rem 1rem;
+  white-space: nowrap;
+  border-radius: 5px;
+  opacity: 0.85;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.Options div:hover {
+  opacity: 1;
+  background-color: #1f202e;
+}
+.Options::-webkit-scrollbar {
+  height: 3px;
+  display: block;
+}
+.Options::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #000000;
+}
+.Options::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: transparent;
+}
+.Options:hover::-webkit-scrollbar-thumb {
+  background-color: #b8b8b8;
+}
+
+.active {
+  background-color: #1f202e !important;
+  color: white;
+  opacity: 1 !important;
+}
+
+.Explore {
+  position: relative;
+  padding: 2vw;
+  background-color: #0d0d0d;
+}
+.Explore section {
+  padding: 10px 0 40px;
+  position: relative;
+  min-height: 50vh;
+}
+.Explore .loadingModal {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 95px 24px;
+  height: 100vh;
+  inset: 0px;
+  overflow: auto;
+  display: flex;
+  transform: translate3d(0px, 0px, 0px);
+  will-change: opacity;
+  color: black;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  perspective: 1000px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 2222;
+}
+.Explore .loadingModal h1,
+.Explore .loadingModal p {
+  padding-top: 30px;
+  color: #2fc0db;
+  color: #fff;
+}/*# sourceMappingURL=General.module.css.map */

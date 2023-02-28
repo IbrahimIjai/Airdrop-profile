@@ -1,0 +1,144 @@
+.main {
+  min-height: 100vh;
+  padding: 0 7vw;
+  background-color: #161616;
+  color: #f6f6f6;
+}
+.main .container {
+  padding-top: min(30px, 5%);
+  position: relative;
+  padding-bottom: min(30px, 5%);
+}
+.main .container .user {
+  display: block;
+  margin: 20px auto;
+  color: #f6f6f6;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.main .container .user .profile {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+.main .container .user .profile .banner {
+  width: 100%;
+  position: relative;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #efefef;
+}
+.main .container .user .profile .profileImage {
+  width: 100px;
+  border: 1px solid #efefef;
+  height: 100px;
+  background-color: grey;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  overflow: hidden;
+}
+.main .container .ownedItems {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+  grid-template-rows: repeat(auto-fill, minmax(250px, 300px));
+  justify-content: center;
+  gap: 26px;
+}
+.main .container .ownedItems .nft {
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+  box-shadow: 0px 10px 20px rgba(250, 250, 250, 0.1);
+  cursor: pointer;
+  will-change: transform;
+  position: relative;
+  color: currentcolor;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 32px;
+  text-decoration: none;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 500ms ease-in-out;
+  border: 1.22px solid #efefef;
+}
+.main .container .ownedItems .nft div > span {
+  background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.438)) !important;
+}
+.main .container .ownedItems .nft:hover {
+  transform: translateY(-5px);
+}
+.main .container .ownedItems .nft:hover div > span {
+  transform: scale(1.05);
+  background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.438)) !important;
+  color: #f2f2f2;
+}
+.main .container .ownedItems .nft div > span {
+  transition: all 500ms ease-in-out;
+}
+.main .container .ownedItems .nft .image {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+.main .container .ownedItems .nft .content {
+  position: relative;
+  height: 236px;
+  width: 100%;
+}
+.main .container .ownedItems .nft .content .onSale {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  font-weight: 500;
+}
+.main .container .ownedItems .nft .content .details {
+  position: absolute;
+  bottom: 0;
+}
+
+.image {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+.ima {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+.promptBuy i {
+  font-style: normal;
+}
+.promptBuy span:nth-child(2) {
+  color: blue;
+  font-style: normal;
+}
+@media (max-width: 450px) {
+  .promptBuy span:nth-child(2) {
+    display: block;
+  }
+}
+
+.notAddress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  color: gray;
+  text-align: center;
+  flex-direction: column;
+}/*# sourceMappingURL=profile.module.css.map */

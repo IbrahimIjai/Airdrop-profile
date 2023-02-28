@@ -1,0 +1,368 @@
+.main {
+  background-image: url(../img/mobile-black.png);
+  min-height: 100vh;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 2vw;
+}
+.main aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main aside .center {
+  text-transform: capitalize;
+  font-size: clamp(1.6rem, 2.3rem, 2.5vw);
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 0.1vw;
+}
+.main aside .center h1 {
+  line-height: 1.3;
+  margin: 0;
+}
+.main aside .center h1 span {
+  color: #2fc0db;
+}
+.main aside .center .mid {
+  text-align: center;
+}
+.main aside p {
+  display: block;
+  max-width: 80vw;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: clamp(1.25rem, 1.45rem, 2.5vw);
+  letter-spacing: 0.4px;
+  line-height: 1.25;
+  word-spacing: 0.2vw;
+}
+@media (min-width: 600px) and (max-width: 800px) {
+  .main aside p {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1100px) {
+  .main aside p {
+    max-width: 800px;
+  }
+}
+.main .heroImage {
+  position: relative;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+  width: 300px;
+  overflow: hidden;
+}
+.main .heroImage .slider {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+  gap: 15px;
+}
+.main .heroImage .slider .slides {
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  text-align: center;
+  overflow: hidden;
+  height: 320px;
+}
+.main .heroImage .slider .slides::-webkit-scrollbar {
+  display: none;
+}
+.main .heroImage .slider .slides div {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 300px;
+  height: 320px;
+  margin-right: 25px;
+  border-radius: 10px;
+  background: #eee;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 3s;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.main .heroImage .slider .slides div .all {
+  position: relative;
+  left: 0;
+  order: 1;
+  width: 300px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+}
+.main .heroImage .slider .slides div .all .image {
+  width: 300px;
+  height: 320px;
+  position: absolute;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0.4px solid #2fc0db;
+}
+.main .heroImage .slider .slides div .all .image div {
+  position: absolute;
+  bottom: 0;
+  padding: 5% 7%;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.44);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(8.5px);
+          backdrop-filter: blur(8.5px);
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.main .heroImage .slider .slides div .all .image div h3 {
+  margin: 5px 0;
+}
+.main .heroImage .slider .slides div .all .image div p {
+  margin: 2px;
+  font-size: 16px;
+  line-height: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.main .heroImage .slider .slides div .all .image div p span {
+  text-align: right;
+  font-size: 11px;
+}
+.main .heroImage .slider .links {
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  justify-content: center;
+}
+.main .heroImage .slider .links a {
+  display: inline-flex;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 45%;
+  background: #2fc0db;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0.3rem;
+  position: absolute;
+}
+.main .heroImage .slider .links a:focus {
+  background: #000;
+}
+@media (min-width: 750px) {
+  .main {
+    justify-content: center;
+    background-image: url("../img/desktop-black.png");
+    display: flex;
+    align-items: stretch;
+    align-items: center;
+  }
+  .main aside {
+    text-align: center;
+  }
+  .main aside p {
+    text-align: center;
+  }
+  .main aside .center .mid {
+    text-align: left;
+  }
+  .main aside p {
+    margin: 10px 0 30px 0;
+  }
+  .main .heroImage {
+    position: relative;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+  .main .heroImage .slider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+  }
+  .main .heroImage .slider .slides {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    text-align: center;
+    overflow: hidden;
+    height: 400px;
+  }
+  .main .heroImage .slider .slides::-webkit-scrollbar {
+    display: none;
+  }
+  .main .heroImage .slider .slides div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 400px;
+    height: 400px;
+    margin-right: 25px;
+    border-radius: 10px;
+    background: #eee;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 3s;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .main .heroImage .slider .slides div .all {
+    position: relative;
+    left: 0;
+    order: 1;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+  }
+  .main .heroImage .slider .slides div .all .image {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 0.4px solid #2fc0db;
+  }
+  .main .heroImage .slider .slides div .all .image div {
+    position: absolute;
+    bottom: 0;
+    padding: 5% 7%;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.44);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(8.5px);
+            backdrop-filter: blur(8.5px);
+    width: 100%;
+    height: 100px;
+  }
+  .main .heroImage .slider .slides div .all .image div h3 {
+    margin: 5px 0;
+  }
+  .main .heroImage .slider .slides div .all .image div p {
+    margin: 2px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main .heroImage .slider .slides div .all .image div p span {
+    text-align: right;
+    font-size: 11px;
+  }
+  .main .heroImage .slider .links {
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    justify-content: center;
+  }
+  .main .heroImage .slider .links a {
+    display: inline-flex;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 45%;
+    background: #2fc0db;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0.3rem;
+  }
+  .main .heroImage .slider .links a:focus {
+    background: #000;
+  }
+}
+@media (min-width: 750px) and (min-width: 1160px) {
+  .main .heroImage {
+    padding: 1vw 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main {
+    background-image: url("../img/desktop-black.png");
+  }
+}
+
+@media (min-width: 700px) and (min-height: 1000px) {
+  .main {
+    height: 55vh !important;
+  }
+  .heroImage {
+    width: 100% !important;
+  }
+  .heroImage .slider .slides {
+    height: 350px !important;
+  }
+  .heroImage .slider .slides div {
+    height: 350px !important;
+    width: 350px !important;
+  }
+  .heroImage .slider .slides div .all {
+    height: 350px !important;
+    width: 350px !important;
+  }
+  .heroImage .slider .slides div .all .image {
+    height: 350px !important;
+    width: 350px !important;
+  }
+  .heroImage .slider .slides div .all .image div {
+    height: 100px !important;
+  }
+}
+@media (min-width: 700px) and (min-height: 1000px) and (max-width: 750px) {
+  .main {
+    height: 55vh !important;
+  }
+  .heroImage {
+    width: 300px !important;
+  }
+  .heroImage .slider .slides {
+    height: 300px !important;
+  }
+  .heroImage .slider .slides div {
+    height: 300px !important;
+    width: 300px !important;
+  }
+  .heroImage .slider .slides div .all {
+    height: 300px !important;
+    width: 300px !important;
+  }
+  .heroImage .slider .slides div .all .image {
+    height: 300px !important;
+    width: 300px !important;
+  }
+  .heroImage .slider .slides div .all .image div {
+    height: 100px !important;
+  }
+}
+.slider > a {
+  display: block;
+}/*# sourceMappingURL=Hero.module.css.map */

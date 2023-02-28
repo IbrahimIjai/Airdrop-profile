@@ -1,0 +1,92 @@
+.ProfileSettingsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 1.2rem;
+  
+  @media (min-width:960px) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  h4 {
+    font-size: 1.8rem;
+    font-weight: 300;
+  }
+  .bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p {
+      padding: 1rem 0;
+      color: gray;
+    }
+    label {
+      color: rgb(212, 209, 209);
+      padding: 0.8rem 0 0.3rem 0;
+      font-size: 1.1rem;
+    }
+    input {
+      background-color: rgb(71, 66, 66);
+      outline: none;
+      border-radius: 10px;
+      padding: 0.5rem 0.4rem;
+      &:active {
+        background-color: rgb(71, 66, 66);
+      }
+    }
+    .socials {
+      display: flex;
+      flex-direction: column;
+    }
+    .accountInfoInputes {
+      display: flex;
+      flex-direction: column;
+      label {
+        color: rgb(212, 209, 209);
+        padding: 0.8rem 0 0.3rem 0;
+        font-size: 1.1rem;
+      }
+
+      textarea {
+        background-color: rgb(61, 59, 59);
+        outline: none;
+        min-height: 120px;
+        border-radius: 10px;
+        padding: 0.5rem;
+        &:active {
+          background-color: rgb(71, 66, 66);
+        }
+      }
+    }
+  }
+  .uploadProfilePicture {
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+.submitBtn {
+  border: 0.8px solid rgb(94, 163, 238);
+  padding: 0.1rem 2rem;
+  // width: 90%;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-radius: 15px;
+  transition: all 0.5s ease-in-out;
+  background-color: rgb(70, 169, 208);
+  color: rgb(253, 251, 251);
+  // margin: auto;
+  margin: .5rem 1.2rem;
+  &:active {
+    scale: 0.92;
+  }
+  &:hover {
+    scale: 1.06;
+  }
+}

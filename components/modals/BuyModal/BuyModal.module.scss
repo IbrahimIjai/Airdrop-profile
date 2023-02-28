@@ -1,0 +1,80 @@
+@use "../ModalBG.module.scss" as G;
+.modal {
+  @include G.Modal();
+  .actualModal {
+    @include G.InternalModal();
+    @include G.BoxModal();
+    .TokenDetails {
+      @include G.Flex();
+      @include G.TokenDetails();
+      justify-content: flex-start !important;
+      flex-direction: row !important;
+      flex: none !important;
+      padding: 0;
+      gap: 10px;
+      p,
+      span {
+        @include G.TextSubHeader();
+        .image {
+          border-radius: 10px !important;
+        }
+      }
+    }
+    .saleInfo {
+      @include G.BoxModal();
+      h2 {
+        @include G.TextSubHeader();
+        font-size: 20px;
+      }
+      .price {
+        @include G.Flex();
+        justify-content: flex-start;
+        gap: 10px;
+        span {
+          display: flex;
+        }
+        h1 {
+          font-weight: 400;
+        }
+      }
+      .PaymentMethod {
+        .container {
+          margin: 0 !important;
+        }
+        @include G.InlineBoxModal();
+        & > p {
+          @include G.TextSubHeader();
+        }
+        @include G.PaymentMethod();
+      }
+    }
+    hr {
+      @include G.Hr();
+    }
+    .ExecuteTx {
+      @include G.ExecuteTXButton();
+    }
+  }
+}
+
+.InsufficientFundContainer {
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(244, 208, 208);
+  margin: 0.8rem;
+  border-radius: 15px;
+  background-color: rgb(237, 220, 220, 0.5);
+  .warning {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    p {
+      font-size: 1.1rem;
+      transform: translateY(-2px);
+      font-weight: 500;
+    }
+  }
+}

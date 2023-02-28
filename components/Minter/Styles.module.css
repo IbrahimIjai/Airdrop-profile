@@ -1,0 +1,265 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2vw;
+  height: auto;
+  background-color: #0d0d0d;
+}
+.container .currentView {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin: 10px 0;
+}
+.container .currentView aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 13px;
+}
+.container .currentView aside span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #2fc0db;
+}
+.container input,
+.container textarea {
+  padding: 0.8rem 0.5rem;
+  border-radius: 5px;
+  border: 0.5px solid hsl(189, 70%, 52%);
+  outline: none;
+  color: rgb(135, 139, 142);
+  transition: all 0.2s ease-in-out;
+  background: none;
+}
+.container input:hover,
+.container textarea:hover {
+  scale: 1.01;
+}
+.container input:focus,
+.container textarea:focus {
+  background-color: black;
+  scale: 1;
+  color: white;
+}
+.container input[type=number]::-webkit-inner-spin-button,
+.container input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+.container .contentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+@media (min-width: 1000px) {
+  .container .contentContainer {
+    flex-direction: row;
+    gap: 15px;
+  }
+  .container .contentContainer .upLoad {
+    flex: 4.5;
+    position: sticky;
+    top: 0;
+    margin: 0;
+  }
+  .container .contentContainer .upLoad .previewContainer {
+    width: 100%;
+  }
+  .container .contentContainer .upLoad .previewContainer .NFTImageDiv {
+    padding-top: 100%;
+    width: 100%;
+  }
+  .container .contentContainer .data {
+    flex: 5.5;
+  }
+}
+.container .upLoad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0.4rem auto;
+  width: 100%;
+  justify-content: center;
+}
+.container .data {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 500px);
+  gap: 1rem;
+}
+.container .data .inputSection1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.container .data .attributesSection {
+  display: flex;
+  flex-direction: column;
+  border: 0.6px solid gray;
+  border-radius: 8px;
+  padding: 10px;
+  align-items: center;
+}
+.container .data .attributesSection .propertiesDiv {
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+}
+.container .data .attributesSection .propertiesDiv .property {
+  display: flex;
+  width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .data .attributesSection .propertiesDiv .property div {
+  border: 0.5px solid #2fc0db;
+  padding: 0.1rem 0.7rem;
+  flex: 0.8;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+.container .data .attributesSection .propertiesDiv .property div h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.container .data .attributesSection .propertiesDiv .property div p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgb(142, 244, 247);
+}
+.container .data .attributesSection .propertiesDiv .property .deleteBtn {
+  border-radius: 50%;
+  display: flex;
+  flex: 0.2;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-out;
+}
+.container .data .attributesSection .propertiesDiv .property .deleteBtn:hover {
+  scale: 1.05;
+}
+.container .data .attributesSection .propertiesDiv .property .deleteBtn:active {
+  scale: 0.95;
+}
+.container .data .attributesSection .inputSection2 {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem 0;
+}
+.container .data .attributesSection .inputSection2 .instructions {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgb(221, 86, 86);
+}
+.container .data .attributesSection .inputSection2 input {
+  padding: 0.7rem 0.5rem;
+}
+
+.preview {
+  display: flex;
+  background-color: black;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 0.4rem 0;
+  align-items: center;
+}
+.preview span {
+  text-align: center;
+  width: 100%;
+}
+.preview:hover {
+  scale: 1.02;
+  background-color: white;
+  color: black;
+}
+
+.previewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.previewContainer .NFTImageDiv {
+  border: 1px solid #2fc0db;
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.imageInput {
+  text-align: center;
+  padding: 3%;
+  border: thin solid black;
+}
+.imageInput input {
+  display: none;
+}
+.imageInput label {
+  cursor: pointer;
+}
+.imageInput label p {
+  margin: 1rem;
+  white-space: nowrap;
+}
+
+.loadingModal {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 95px 24px;
+  height: 100vh;
+  inset: 0px;
+  overflow: auto;
+  display: flex;
+  transform: translate3d(0px, 0px, 0px);
+  will-change: opacity;
+  color: black;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  perspective: 1000px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9;
+}
+
+.not {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100%;
+  font-weight: 500;
+  color: gray;
+  text-align: center;
+  flex-direction: column;
+}
+.not p {
+  font-size: clamp(14px, 1rem, 20px);
+}/*# sourceMappingURL=Styles.module.css.map */

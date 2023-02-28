@@ -1,0 +1,296 @@
+.openOffers .UserOffersTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+}
+.openOffers .UserOffersTotal p {
+  display: flex;
+  gap: 5px;
+}
+.openOffers .UserOffersTotal p span {
+  display: flex;
+  align-items: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  flex-direction: column;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  gap: 1rem;
+  padding: 100px 0 50px;
+}
+.modal .actualModal {
+  background-color: #0d0d0d;
+  width: min(400px, 100%);
+  color: #fff;
+  padding: 1rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 7px;
+  transition: all 3199ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.modal .actualModal::-webkit-scrollbar {
+  display: none;
+}
+.modal .actualModal:hover::-webkit-scrollbar {
+  height: 3px;
+  display: block;
+}
+.modal .actualModal:hover::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #000000;
+}
+.modal .actualModal:hover::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: transparent;
+}
+.modal .actualModal:hover:hover::-webkit-scrollbar-thumb {
+  background-color: #b8b8b8;
+}
+.modal .actualModal .TokenDetails {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 1rem;
+  justify-content: flex-start !important;
+  flex-direction: row !important;
+  flex: none !important;
+  padding: 0;
+  gap: 10px;
+}
+.modal .actualModal .TokenDetails .imageName {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.modal .actualModal .TokenDetails .image {
+  border-radius: 100%;
+  overflow: hidden;
+}
+.modal .actualModal .TokenDetails .name h3 {
+  font-weight: 600;
+}
+.modal .actualModal .TokenDetails .name span {
+  font-weight: 300;
+  opacity: 1;
+  font-size: 14.35px;
+  display: flex;
+  gap: 5px;
+}
+.modal .actualModal .TokenDetails .name span .contentFloor {
+  display: flex;
+  gap: 4px;
+}
+.modal .actualModal .TokenDetails p,
+.modal .actualModal .TokenDetails span {
+  opacity: 0.6;
+  font-size: 14.3px;
+}
+.modal .actualModal .TokenDetails p .image,
+.modal .actualModal .TokenDetails span .image {
+  border-radius: 10px !important;
+}
+.modal .actualModal .selectorHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.modal .actualModal .selectorHeader span {
+  opacity: 0.6;
+  font-size: 14.3px;
+}
+.modal .actualModal .selectorHeader .selectors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  justify-content: space-around;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.modal .actualModal .selectorHeader .selectors div {
+  background-color: #1f202e;
+  opacity: 0.8;
+  color: white;
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  width: 50%;
+  padding: 0.75rem;
+  cursor: pointer;
+  font-size: 14px;
+}
+.modal .actualModal .selectorHeader .selectors .divSelector {
+  transition: all 350ms ease-in-out;
+}
+.modal .actualModal .selectorHeader .selectors .divSelector:hover {
+  opacity: 1;
+}
+.modal .actualModal .selectorHeader .selectors .divSelectorActive {
+  opacity: 1;
+  background-color: #2fc0db;
+}
+.modal .actualModal hr {
+  height: 1px;
+  margin: 0.5rem 0;
+  background-color: #1f202e;
+  opacity: 0.03;
+}
+.modal .actualModal .inputBarContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.modal .actualModal .inputBarContainer .inputBar {
+  position: relative;
+}
+.modal .actualModal .inputBarContainer .inputBar input {
+  padding: 0.3rem 0.5rem;
+  outline: none;
+  margin: 10px 0;
+  width: max(300px, 100%);
+  height: 40px;
+  background: none;
+  border-radius: 7px;
+  background-color: #080808;
+  color: #fff;
+  font-size: 14px;
+  border: 1px solid black;
+}
+.modal .actualModal .inputBarContainer label,
+.modal .actualModal .inputBarContainer p {
+  opacity: 0.6;
+  font-size: 14.3px;
+}
+.modal .actualModal .inputBarContainer p > span {
+  opacity: 1;
+  font-weight: 500;
+  font-size: 15px;
+  color: #fff;
+}
+.modal .actualModal .inputBarContainer .asset {
+  position: absolute;
+  top: 40px;
+  height: 40px;
+  right: 10px;
+}
+.modal .actualModal .inputBarContainer .valid {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.modal .actualModal .inputBarContainer .valid span {
+  flex: 1;
+  width: -moz-min-content;
+  width: min-content;
+  border: 1px solid #d0d5dd;
+  padding: 8px 14px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  display: flex;
+  cursor: pointer;
+  background: #000;
+  transition: all 300ms ease-in-out;
+}
+.modal .actualModal .inputBarContainer .valid span:hover {
+  background: #f9f5ff;
+  border: none;
+  color: #000;
+}
+.modal .actualModal .inputBarContainer .valid .activeButton {
+  background: #f9f5ff;
+  border: none;
+  color: #000;
+}
+.modal .actualModal .saleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.modal .actualModal .saleInfo .PaymentMethod {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.modal .actualModal .saleInfo .PaymentMethod .container {
+  margin: 0 !important;
+}
+.modal .actualModal .saleInfo .PaymentMethod > p {
+  opacity: 0.6;
+  font-size: 14.3px;
+}
+.modal .actualModal .saleInfo .PaymentMethod .paymentBox {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
+.modal .actualModal .saleInfo .PaymentMethod .paymentBox > span {
+  width: 100%;
+}
+.modal .actualModal .saleInfo .PaymentMethod .container {
+  opacity: 0.6;
+  margin: 10px 0;
+}
+.modal .actualModal .ExecuteTx {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.7rem;
+  text-align: center;
+}
+.modal .actualModal .ExecuteTx div {
+  width: 100%;
+  background-color: #2fc0db;
+  padding: 15px 10px;
+  text-align: center;
+  border-radius: 10px;
+  transition: all 350ms ease-in-out;
+  cursor: pointer;
+}
+.modal .actualModal .ExecuteTx div:hover {
+  opacity: 0.8;
+}
+.modal .actualModal .ExecuteTx button {
+  background-color: #1f202e;
+  color: white;
+  border: none;
+  width: 50%;
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 350ms ease-in-out;
+}
+.modal .actualModal .ExecuteTx button:hover {
+  opacity: 0.8;
+}
+.modal .actualModal .ExecuteTx section {
+  text-align: center;
+  opacity: 0.6;
+  font-size: 14.3px;
+}/*# sourceMappingURL=UpdateModal.module.css.map */

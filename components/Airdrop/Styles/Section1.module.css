@@ -1,0 +1,63 @@
+.container {
+  font-family: roboto;
+  padding: 0 3rem;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .zerobtncont {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.container .zerobtncont div {
+  background-color: #2fc0db;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: rgb(207, 207, 207);
+  transition: all 0.6s;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.container .zerobtncont div:hover {
+  scale: 1.04;
+}
+.container .zerobtncont div:active {
+  scale: 0.96;
+}
+.container .congrats span:nth-child(1) {
+  color: #2fc0db;
+  font-size: 1.5rem;
+}
+.container .congrats span:nth-child(2) {
+  font-size: 0.9rem;
+}
+.container .zeropoint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container .zeropoint .oopscontainer span:nth-child(1) {
+  color: #2fc0db;
+  font-size: 1.5rem;
+}
+.container .zeropoint .oopscontainer span:nth-child(2) {
+  font-size: 1rem;
+}
+
+.historycontaine {
+  padding: 0 3rem;
+}
+.historycontaine h3 {
+  font-weight: 400;
+  padding: 0.3rem;
+}
+.historycontaine .hr {
+  color: #2fc0db;
+  height: 0px;
+  border: none;
+  border-top: 1px solid #2fc0db;
+}/*# sourceMappingURL=Section1.module.css.map */

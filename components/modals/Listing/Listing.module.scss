@@ -1,0 +1,80 @@
+@use "../ModalBG.module.scss" as G;
+.modal {
+  @include G.Modal();
+  .actualModal {
+    @include G.InternalModal();
+    @include G.BoxModal();
+    .TokenDetails {
+      @include G.Flex();
+      @include G.TokenDetails();
+      justify-content: flex-start !important;
+      flex-direction: row !important;
+      flex: none !important;
+      padding: 0;
+      gap: 10px;
+      p,
+      span {
+        @include G.TextSubHeader();
+        .image {
+          border-radius: 10px !important;
+        }
+      }
+    }
+    .selectorHeader {
+      @include G.InlineBoxModal();
+      span {
+        @include G.TextSubHeader();
+      }
+      .selectors {
+        @include G.Flex();
+        justify-content: space-around;
+        border-radius: 20px;
+        overflow: hidden;
+        div {
+          background-color: #1f202e;
+          opacity: 0.8;
+          color: white;
+          text-align: center;
+          width: fit-content;
+          width: 50%;
+          padding: 0.75rem;
+          cursor: pointer;
+          font-size: 14px;
+        }
+        .divSelector {
+          transition: all 350ms ease-in-out;
+          &:hover {
+            opacity: 1;
+          }
+        }
+        .divSelectorActive {
+          opacity: 1;
+          background-color: #2fc0db;
+        }
+      }
+    }
+    hr {
+      @include G.Hr();
+    }
+    .inputBarContainer {
+      @include G.InputBarContainer();
+      @include G.InlineBoxModal();
+      label,
+      p {
+        @include G.TextSubHeader();
+      }
+      p > span {
+        @include G.FloorData();
+      }
+      .asset {
+        @include G.Asset();
+      }
+      .valid {
+        @include G.Expiry();
+      }
+    }
+    .ExecuteTx {
+      @include G.ExecuteTXButton();
+    }
+  }
+}

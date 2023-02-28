@@ -1,0 +1,40 @@
+.box {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  align-items: center;
+  padding: 13px;
+  border: 1px solid;
+  border-radius: 10px;
+  flex: 1;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.box:hover {
+  background-color: #ffffff;
+  color: black !important;
+}
+.logoBox {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.balanceBox {
+  width: 100%;
+}
+
+.balanceLabel {
+  font-size: 14px;
+}
+
+.balance {
+  margin-left: 5px;
+}

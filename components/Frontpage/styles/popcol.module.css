@@ -1,0 +1,206 @@
+.Cointainer {
+  margin: 4% 0;
+  position: relative;
+}
+
+.Header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0 2vw;
+}
+.Header .HeaderTittle {
+  font-size: clamp(1.3rem, 1.5rem, 1.6vw);
+  font-weight: 600;
+  margin: 0;
+  clear: both;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 1%;
+}
+.Header .HeaderParagraph {
+  opacity: 0.85;
+  padding: 0 1%;
+  font-size: clamp(0.91rem, 1rem, 1.1vw);
+}
+
+.topCollections {
+  overflow-x: hidden;
+  width: 100%;
+  padding: 0 2vw;
+}
+
+.head {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: sticky;
+  padding-top: 4vh;
+  padding-bottom: 1vh;
+  font-size: clamp(0.88rem, 0.95rem, 1vw);
+  opacity: 0.82;
+  margin-left: 1rem;
+}
+.head .collection {
+  flex: 1.5;
+  -webkit-backdrop-filter: blur(29.5px);
+          backdrop-filter: blur(29.5px);
+  z-index: 33;
+  display: flex;
+  justify-content: flex-start;
+  top: 0;
+  left: 0;
+  position: sticky;
+}
+.head div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.head div:nth-last-child(-n+3) {
+  display: none;
+}
+
+.body {
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.body .key {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.body .key:hover .imageContainer span img {
+  transform: scale(1.1);
+}
+.body .key .count {
+  flex: 1.5;
+  z-index: 33;
+  display: flex;
+  top: 0;
+  left: 0;
+  position: sticky;
+  -webkit-backdrop-filter: blur(29.5px);
+          backdrop-filter: blur(29.5px);
+}
+.body .key .count div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.body .key .count div .imageContainer {
+  width: 90px;
+  height: 90px;
+}
+.body .key .count div .imageContainer .image {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+.body .key .count div .imageContainer .image span {
+  border-radius: 5px;
+  border: 2px solid #2fc0db !important;
+}
+.body .key .count div .imageContainer .image span img {
+  transition: all 0.4s ease-in-out;
+}
+.body .key .count div .imageContainer .image span img:hover {
+  transform: scale(1.25);
+}
+@media (max-width: 400px) {
+  .body .key .count div .imageContainer {
+    width: 80px;
+    height: 80px;
+  }
+  .body .key .count div .imageContainer .image {
+    width: 70px;
+    height: 70px;
+  }
+}
+.body .key .count div .name {
+  display: flex;
+  font-size: clamp(0.91rem, 1rem, 1.1vw);
+  justify-content: flex-start;
+  align-items: normal;
+  flex-direction: column;
+  white-space: nowrap;
+  gap: 1px;
+}
+.body .key .count div .name .mobileFloor {
+  font-size: clamp(0.8rem, 0.9rem, 1vw);
+  opacity: 0.8;
+  display: flex;
+  gap: 5px;
+}
+.body .key .count div .name .mobileFloor .contentFloor {
+  display: flex;
+  gap: 2px;
+}
+.body .key .content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.91rem, 1rem, 1.1vw);
+}
+.body .key .content:nth-last-child(-n+3) {
+  display: none;
+}
+
+@media (min-width: 750px) {
+  .topCollections {
+    padding: 3vh 2vw;
+  }
+  .head {
+    margin-left: 0.55rem;
+  }
+  .head div:nth-last-child(-n+3) {
+    display: flex;
+  }
+  .key {
+    margin-left: 0 !important;
+  }
+  .key .content:nth-last-child(-n+3) {
+    display: flex !important;
+  }
+}
+.key {
+  background: #18202a;
+  border-radius: 10px;
+}
+.key:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.skeletonWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.contentFloor {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.notActive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  width: 100vw;
+  overflow: hidden;
+  font-size: 20px;
+  font-weight: 500;
+  color: gray;
+  text-align: center;
+  flex-direction: column;
+}/*# sourceMappingURL=popcol.module.css.map */
