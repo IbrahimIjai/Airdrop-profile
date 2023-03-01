@@ -29,7 +29,7 @@
     "nprogress": "^0.2.0",
     "react": "^16.8.0",
     "react-blockies": "^1.4.1",
-    "react-dom": "18.2.0",
+    "react-dom": "^16.8.0",
     "react-dropzone": "^14.2.3",
     "react-icons": "^4.7.1",
     "react-spinners": "^0.13.4",
