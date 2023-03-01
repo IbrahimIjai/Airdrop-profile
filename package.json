@@ -1,8 +1,7 @@
 {
-  "name": "distantairdrop",
-  "version": "1.0.0",
-  "description": "Distant Marketplace",
-  "main": "next.config.js",
+  "name": "testing-grounds",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -36,7 +35,5 @@
   "devDependencies": {
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }
