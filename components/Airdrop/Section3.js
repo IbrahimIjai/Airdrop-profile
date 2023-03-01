@@ -14,7 +14,7 @@ export default function Howto() {
 
       <div id="How_to_Earn_Null_Points" className={styles.listcont}>
         <h2>How to earn void points</h2>
-        {howto.map((text, intex) => {
+        {howto.map((text, index) => {
           return (
             <div key={index} className={styles.list}>
               <div><GiArrowScope size="1.5rem" color="#2fc0db"/></div>

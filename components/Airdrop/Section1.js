@@ -47,7 +47,7 @@ export default function AirdropSection_1({ animate_ }) {
         </div>
       ) : (
         <div className={styles.inactiveMsg}>
-          <p>Welcome to Distant Finance's Point-Based Airdrop portal</p>
+          <p>Welcome to Distant Finance Point-Based Airdrop portal</p>
           <div>
             <span className={styles.Connect}>Connect</span>
             {"   "}your wallet to see your null-point and activities

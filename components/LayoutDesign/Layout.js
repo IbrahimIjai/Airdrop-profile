@@ -21,7 +21,7 @@ export default function Layout({ children }) {
       router.events.on("routeChangeComplete", (url) => setRouteLoading(false));
     };
     router.isReady && route();
-  }, [router.isReady]);
+  }, [router.isReady, router.events]);
 
   return (
     <BalanceContextProvider>
