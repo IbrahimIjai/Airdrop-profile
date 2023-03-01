@@ -1,10 +1,28 @@
 .container {
-  font-family: roboto;
+  font-family: Poppins;
   padding: 0 3rem;
   min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.container .inactiveMsg {
+  text-align: center;
+}
+.container .inactiveMsg :nth-child(1) {
+  color: #2fc0db;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.container .inactiveMsg :nth-child(2) {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+.container .inactiveMsg :nth-child(2) .Connect {
+  color: #2fc0db;
+  font-size: 1rem;
+  text-decoration: underline;
 }
 .container .zerobtncont {
   display: flex;
@@ -49,7 +67,9 @@
 }
 
 .historycontaine {
+  font-family: Poppins;
   padding: 0 3rem;
+  font-size: 0.9rem;
 }
 .historycontaine h3 {
   font-weight: 400;
@@ -60,4 +80,82 @@
   height: 0px;
   border: none;
   border-top: 1px solid #2fc0db;
+}
+.historycontaine .transactions {
+  min-height: 20vh;
+  width: 100%;
+}
+.historycontaine .historyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 0.5px solid #2fc0db;
+}
+.historycontaine .historyHeader p {
+  flex: 1 0 0;
+  width: 33.33%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.historycontaine .transactionDetails {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+.historycontaine .transactionDetails div {
+  width: 33.33%;
+  text-align: center;
+}
+.historycontaine .transactionDetails .NFTde {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.historycontaine .transactionDetails .NFTde .nftimagecont {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.historycontaine .transactionDetails .events p :nth-child(3) {
+  font-size: 0.5rem;
+}
+
+.section3 {
+  font-family: Poppins;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4vw 1rem 4vw;
+}
+.section3 p {
+  font-size: 0.9rem;
+}
+.section3 .textcont {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.section3 .textcont p {
+  padding: 1rem 0;
+  max-width: 90%;
+  text-align: center;
+}
+.section3 .listcont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.section3 .listcont h2 {
+  padding: 1rem;
+}
+.section3 .listcont .list {
+  display: flex;
+  gap: 1rem;
+  width: 90%;
+  padding-top: 2rem 0;
 }/*# sourceMappingURL=Section1.module.css.map */

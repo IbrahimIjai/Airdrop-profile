@@ -1,10 +1,29 @@
 .container {
-  font-family: roboto;
+  font-family: Poppins;
   padding: 0 3rem;
   min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  .inactiveMsg {
+    text-align: center;
+    :nth-child(1) {
+      color: #2fc0db;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+    :nth-child(2) {
+      padding: 1rem;
+      font-size: 1.2rem;
+      font-weight: 100;
+
+      .Connect {
+        color: #2fc0db;
+        font-size: 1rem;
+        text-decoration: underline;
+      }
+    }
+  }
   .zerobtncont {
     display: flex;
     flex-wrap: wrap;
@@ -58,15 +77,107 @@
 }
 
 .historycontaine {
+  font-family: Poppins;
   padding: 0 3rem;
-  h3{
+  font-size: .9rem;
+  h3 {
     font-weight: 400;
-    padding: .3rem;
+    padding: 0.3rem;
   }
   .hr {
     color: #2fc0db;
     height: 0px;
     border: none;
     border-top: 1px solid #2fc0db;
+  }
+  .transactions {
+    min-height: 20vh;
+    width: 100%;
+  }
+
+  .historyHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 0.5px solid #2fc0db;
+    p {
+      flex: 1 0 0;
+      width: 33.33%;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+  }
+
+  .transactionDetails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    div {
+      // flex: 1 0 0;
+      width: 33.33%;
+      text-align: center;
+    }
+    .NFTde {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      .nftimagecont {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+    }
+    .events{
+      p{
+        :nth-child(3){
+          font-size: .5rem;
+        }
+      }
+    }
+  }
+}
+
+.section3 {
+  font-family: Poppins;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4vw 1rem 4vw;
+  p {
+    font-size: 0.9rem;
+  }
+  .textcont {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    p {
+      padding: 1rem 0;
+      max-width: 90%;
+      text-align: center;
+    }
+  }
+
+  .listcont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+      padding: 1rem;
+    }
+    .list {
+      display: flex;
+      gap: 1rem;
+      width: 90%;
+      padding-top: 2rem 0;
+
+      // div{
+      //   width: 1;
+      // }
+    }
   }
 }
