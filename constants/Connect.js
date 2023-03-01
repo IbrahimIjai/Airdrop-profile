@@ -4,8 +4,8 @@ import { connectors } from "./connectors";
 import styles from "../styles/Connect.module.css";
 import { AnimatePresence } from "framer-motion";
 import { BalanceContext } from "../context/BalanceContext";
-import ConnectModal from "../components/Modals/WalletModal/Connect";
-import DisconnectModal from "../components/Modals/WalletModal/Disconnect";
+import ConnectModal from "../components/modals/WalletModal/Connect"
+import DisconnectModal from "../components/modals/WalletModal/Disconnect";
 import Blockie from "../utils/Blockies";
 export default function Connect() {
   const { active, account, chainId, activate, deactivate } = useWeb3React();

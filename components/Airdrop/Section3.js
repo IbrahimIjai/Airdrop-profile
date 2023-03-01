@@ -5,7 +5,7 @@ export default function Howto() {
     <div id="How_to" className={styles.section3}>
       {headtext.map((text, i) => {
         return (
-          <div id={text.id} className={styles.textcont}>
+          <div key={i} id={text.id} className={styles.textcont}>
             <h2>{text.title}</h2>
             <p>{text.text}</p>
           </div>
@@ -16,7 +16,7 @@ export default function Howto() {
         <h2>How to earn void points</h2>
         {howto.map((text, intex) => {
           return (
-            <div className={styles.list}>
+            <div key={index} className={styles.list}>
               <div><GiArrowScope size="1.5rem" color="#2fc0db"/></div>
               <p>{text}</p>
             </div>

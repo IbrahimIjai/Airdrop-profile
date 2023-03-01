@@ -6,7 +6,7 @@ import RouteLoader from "../Notifications/RouteLoader";
 import MobileSideBar from "./MobileSideBar";
 import BalanceContextProvider from "../../context/BalanceContext";
 import { AnimatePresence } from "framer-motion";
-import Cart from "../Modals/WalletModal/Cart";
+import Cart from "../modals/WalletModal/Cart";
 export default function Layout({ children }) {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [openCart, setOpenCart] = useState(false);
