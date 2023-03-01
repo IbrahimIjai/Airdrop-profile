@@ -1,12 +1,3 @@
 {
-  "extends": "next/core-web-vitals",
-  "rules": {},
-  "overrides": [
-    {
-      "files": ["**/*.js"],
-      "rules": {
-        "import/no-extraneous-dependencies": "off"
-      }
-    }
-  ]
+  "extends": "next/core-web-vitals"
 }
