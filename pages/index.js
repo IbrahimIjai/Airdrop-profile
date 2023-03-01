@@ -7,7 +7,7 @@ export default function Home({ addresses }) {
   return (
     <main>
       <div>
-        <AirdropSection_1 animate={animate_} />
+        <AirdropSection_1  />
       </div>
       <div>
         <AirdropSection_2 />

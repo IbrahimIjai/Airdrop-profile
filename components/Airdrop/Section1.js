@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useWeb3React } from "@web3-react/core";
 import Connect from "../../constants/Connect";
 import Link from "next/link";
-export default function AirdropSection_1({ animate_ }) {
+export default function AirdropSection_1() {
   const { active, account, chainId, activate, deactivate } = useWeb3React();
   const [points, setPoints] = useState(1);
 
