@@ -4,7 +4,6 @@ import { useWeb3React } from "@web3-react/core";
 import Connect from "../../constants/Connect";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CgClose } from "react-icons/cg";
-import { ImGift } from "react-icons/im";
 import Image from "next/image";
 import useMediaQuery from "../../hooks/useMediaQueryhooks";
 import { getCart } from "../../utils/utils";
