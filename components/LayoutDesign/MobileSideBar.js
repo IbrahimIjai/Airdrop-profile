@@ -14,23 +14,18 @@ export default function MobileSideBar({ setMobileMenu }) {
     },
     {
       id: 1,
-      name: "Collection",
+      name: "Marketplace",
       Route: "/collections",
     },
     {
       id: 2,
-      name: "Profile",
-      Route: `/profile/${account}`,
+      name: "Lending",
+      Route: "https://marketplace.distant.finance/",
     },
     {
       id: 3,
-      name: "Mint",
-      Route: "/mint",
-    },
-    {
-      id: 4,
-      name: "Airdrop",
-      Route: "https://airdrop.distant.finance",
+      name: "Docs",
+      Route: "https://docs.distant.finance/",
     },
   ];
   useEffect(() => {

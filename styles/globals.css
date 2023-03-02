@@ -10,6 +10,7 @@ body {
   overflow-x: hidden;
   background-color: black;
   color: #fff;
+  scroll-behavior: smooth;
 }
 .layout {
   padding-top: 60px !important;

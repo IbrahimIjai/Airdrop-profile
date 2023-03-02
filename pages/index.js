@@ -18,14 +18,3 @@ export default function Home({ addresses }) {
     </main>
   );
 }
-
-// export async function getStaticProps() {
-//   let url = `${server}/api/blockchain/supportedcollections`;
-//   const addresses = await FETCH(url);
-//   return {
-//     props: {
-//       addresses: addresses,
-//     },
-//     revalidate: 604800,
-//   };
-// }

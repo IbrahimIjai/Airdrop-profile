@@ -17,7 +17,7 @@ export default function Howto() {
         {howto.map((text, index) => {
           return (
             <div key={index} className={styles.list}>
-              <div><GiArrowScope size="1.5rem" color="#2fc0db"/></div>
+              <div><GiArrowScope size="1rem" color="#2fc0db"/></div>
               <p>{text}</p>
             </div>
           );

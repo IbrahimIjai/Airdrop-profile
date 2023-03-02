@@ -20,10 +20,12 @@ export default function AirdropSection_1() {
                 <span>You have earned 2 Null-points</span>
               </p>
               <div className={styles.zerobtncont}>
-                <div className={styles.zerobbtn}>What are Null-points?</div>
-                <div className={styles.zerobbtn}>
-                  How to earn void points
-                </div>{" "}
+                <Link href="#How_to" smooth={true}>
+                  <div className={styles.zerobbtn}>What are Null-points?</div>
+                </Link>
+                <Link href="#How_to" smooth={true}>
+                  <div className={styles.zerobbtn}>How to earn void points</div>
+                </Link>
               </div>
             </div>
           ) : (

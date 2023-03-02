@@ -18,20 +18,18 @@ export default function Navbar({ mobileMenuHandler, mobileMenu, setOpenCart }) {
     <nav className={styles.nav}>
       <div className={styles.tab}>
         <div className={styles.collections}>
-          <Link href="/collections">
-            <a> Collections</a>
+          <Link href="https://marketplace.distant.finance/">
+            <a> Marketplace</a>
           </Link>
         </div>
-        {active && (
-          <div className={styles.profile}>
-            <Link href={`/profile/${account}`}>
-              <a>Profile</a>
-            </Link>
-          </div>
-        )}
         <div className={styles.profile}>
-          <Link href="/mint">
-            <a>Mint</a>
+          <Link href="/">
+            <a>Lending</a>
+          </Link>
+        </div>
+        <div className={styles.profile}>
+          <Link href="https://docs.distant.finance/">
+            <a>Docs</a>
           </Link>
         </div>
       </div>
@@ -69,16 +67,6 @@ export default function Navbar({ mobileMenuHandler, mobileMenu, setOpenCart }) {
       </div>
 
       <div className={styles.connect}>
-        {!isMobile && (
-          <div className={styles.icons}>
-            <Link href="/">
-              <a>
-                <ImGift />
-              </a>
-            </Link>
-          </div>
-        )}
-
         <div
           className={styles.connectBtn}
           style={{ border: !active ? "1px solid rgb(212, 209, 209)" : "" }}
