@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState, useEffect, useContext } from "react";
-import { createAuction, FUNCTIONS, list } from "../../NFTID/Functions";
+import { createAuction, list } from "../../NFTID/Functions";
 import { utils } from "ethers";
 import { useWeb3React } from "@web3-react/core";
 import styles from "./Listing.module.css";
-import { modal_backdrop, _modal } from "../../../utils/framermotion/NFTID";
-import { PUT, server } from "../../../utils/utils";
+// import { modal_backdrop, _modal } from "../../../utils/framermotion/NFTID";
 import { NFTContext } from "../../../pages/collection/[collection]/[nftId]";
 import { ACTIONS } from "../../Notifications/Notification";
+
 export default function ListingModal() {
   const {
-    ipfsData,
+    saleInfo,
     collection,
     nftId,
-    currentAccount,
     setModal,
     setLoading,
     closeTxn,
+    tokenInfo,
   } = useContext(NFTContext);
   const { library } = useWeb3React();
   let days = [7, 14, 30, 60, 90];
@@ -35,19 +35,9 @@ export default function ListingModal() {
     let txn;
     setLoading(true);
     if (saleType) {
-      let dataBody = { seller: currentAccount, salePrice: value };
       txn = await list(signer, _value, collection, nftId);
-      let url = `${server}/api/mongo/${collection}/${nftId}/modify?type=${FUNCTIONS.SELL}`;
-      if (txn) {
-        await PUT(url, dataBody);
-        closeTxn(ACTIONS.TXN, txn);
-      } else closeTxn(ACTIONS.ERROR);
+      txn ? closeTxn(ACTIONS.TXN, txn) : closeTxn(ACTIONS.ERROR);
     } else {
-      let dataBody = {
-        seller: currentAccount,
-        startingBid: value,
-        validity: days[validity],
-      };
       txn = await createAuction(
         signer,
         collection,
@@ -55,13 +45,10 @@ export default function ListingModal() {
         _value,
         days[validity]
       );
-      let url = `${server}/api/mongo/${collection}/${nftId}/modify?type=${FUNCTIONS.CREATEAUCTION}`;
-      if (txn) {
-        await PUT(url, dataBody);
-        closeTxn(ACTIONS.TXN, txn);
-      } else closeTxn(ACTIONS.ERROR);
+      txn ? closeTxn(ACTIONS.TXN, txn) : closeTxn(ACTIONS.ERROR);
     }
     setModal(false);
+    setLoading(false);
   }
 
   const ref = useRef();
@@ -76,25 +63,31 @@ export default function ListingModal() {
   });
   return (
     <motion.div
-      variants={modal_backdrop}
-      initial="init"
-      animate="final"
-      exit="exit"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
       className={styles.modal}
     >
-      <motion.div ref={ref} variants={_modal} className={styles.actualModal}>
+      <motion.div
+        ref={ref}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className={styles.actualModal}
+      >
         <div>List Token</div>
         <aside className={styles.TokenDetails}>
           <Image
-            src={ipfsData.image}
-            alt={ipfsData.name}
+            src={tokenInfo?.image}
+            alt={tokenInfo?.name}
             width="100px"
             height="100px"
             className={styles.image}
           />
           <div className={styles.name}>
-            <h3>{ipfsData.collectionName}</h3>
-            <p>{ipfsData.name}</p>
+            <h3>{saleInfo.collection}</h3>
+            <p>{tokenInfo?.name}</p>
           </div>
         </aside>
         <aside className={styles.selectorHeader}>

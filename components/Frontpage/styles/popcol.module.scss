@@ -64,6 +64,7 @@ $darkModeColor: #2fc0db;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  gap: 10px;
   .key {
     padding: 5px;
     display: flex;
@@ -125,7 +126,6 @@ $darkModeColor: #2fc0db;
           justify-content: flex-start;
           align-items: normal;
           flex-direction: column;
-          white-space: nowrap;
           gap: 1px;
           .mobileFloor {
             font-size: clamp(0.8rem, 0.9rem, 1vw);

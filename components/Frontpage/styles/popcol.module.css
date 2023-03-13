@@ -68,6 +68,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  gap: 10px;
 }
 .body .key {
   padding: 5px;
@@ -130,7 +131,6 @@
   justify-content: flex-start;
   align-items: normal;
   flex-direction: column;
-  white-space: nowrap;
   gap: 1px;
 }
 .body .key .count div .name .mobileFloor {

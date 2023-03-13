@@ -6,12 +6,12 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { CgClose } from "react-icons/cg";
 import Image from "next/image";
 import useMediaQuery from "../../hooks/useMediaQueryhooks";
-import { getCart } from "../../utils/utils";
+// import { getCart } from "../../utils/utils";
 
 export default function Navbar({ mobileMenuHandler, mobileMenu, setOpenCart }) {
   const { active, account } = useWeb3React();
   const isMobile = useMediaQuery("(max-width: 700px)");
-  const itemCount = getCart("cart");
+  // const itemCount = getCart("cart");
 
   return (
     <nav className={styles.nav}>

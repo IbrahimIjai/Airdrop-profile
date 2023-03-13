@@ -6,7 +6,7 @@ import { buyTokenKCS, buyTokenWKCS, FUNCTIONS } from "../../NFTID/Functions";
 import { utils } from "ethers";
 import { useWeb3React } from "@web3-react/core";
 import { modal_backdrop, _modal } from "../../../utils/framermotion/NFTID";
-import { DELETE, server } from "../../../utils/utils";
+import { DELETE, low, server } from "../../../utils/utils";
 import { ACTIONS } from "../../Notifications/Notification";
 import KCS from "../../../assets/KCS";
 import PaymentMethodWKCS from "../../Components/PaymentMethods/PaymentMethodWKCS";
@@ -20,9 +20,9 @@ export default function ExploreBuyTokenModal({
   item,
 }) {
   const { KCS: KCSBal, WKCS, setKCS } = useContext(BalanceContext);
-  const { library } = useWeb3React();
+  const { library, account } = useWeb3React();
   const [select, setSelect] = useState(1);
-  const { salePrice, image, tokenId, collection } = item;
+  const { salePrice, image, tokenId, collection, seller } = item;
   async function buyToken() {
     const signer = await library.getSigner();
     let _value = utils.parseEther(salePrice);
@@ -30,8 +30,11 @@ export default function ExploreBuyTokenModal({
     let txn;
     if (select === 1) {
       txn = await buyTokenKCS(signer, collection, tokenId, _value);
-    } else txn = await buyTokenWKCS(signer, _value, collection, tokenId);
-    let url = `${server}/api/mongo/${collection}/${tokenId}/modify?type=${FUNCTIONS.BUY}`;
+    } else {
+      txn = await buyTokenWKCS(signer, _value, collection, tokenId);
+    }
+    let Account = low(account);
+    let url = `${server}/api/mongo/${collection}/${tokenId}/modify?type=${FUNCTIONS.BUY}&buyer=${Account}&seller=${seller}`;
     if (txn) {
       setKCS(KCSBal - salePrice);
       await DELETE(url);

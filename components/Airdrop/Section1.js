@@ -1,19 +1,26 @@
 import styles from "./Styles/Section1.module.css";
 import { useState, useEffect } from "react";
-import { ImGift } from "react-icons/im";
-import { motion } from "framer-motion";
 import { useWeb3React } from "@web3-react/core";
-import Connect from "../../constants/Connect";
 import Link from "next/link";
 export default function AirdropSection_1() {
-  const { active, account, chainId, activate, deactivate } = useWeb3React();
+  const { active, account } = useWeb3React();
   const [points, setPoints] = useState(1);
-
+  const getPoints = async ()=> {
+    const response = await fetch(`http://localhost:3001/api/${account}`);
+    const data = await response.json();
+    console.log(data)
+    const points = data.points
+    console.log(points)
+    setPoints(points)
+  }
+  useEffect(()=>{
+    active && getPoints()
+  } ,[active])
   return (
     <div className={styles.container}>
       {active ? (
         <div>
-          {points > 0 ? (
+          {points && points > 0 ? (
             <div>
               <p className={styles.congrats}>
                 <span>Congratualtions,</span>{" "}
@@ -36,12 +43,12 @@ export default function AirdropSection_1() {
               </div>
               <div className={styles.zerobtncont}>
                 <Link href="#How_to">
-                  <p className={styles.zerobbtn}>How to earn void points</p>
+                  <div className={styles.zerobbtn}>How to earn void points</div>
                 </Link>{" "}
                 <Link href="#How_to">
-                  <p className={styles.zerobbtn}>
+                  <div className={styles.zerobbtn}>
                     Benefits of earning void points
-                  </p>
+                  </div>
                 </Link>
               </div>
             </div>

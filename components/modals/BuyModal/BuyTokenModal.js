@@ -13,11 +13,18 @@ import PaymentMethodWKCS from "../../Components/PaymentMethods/PaymentMethodWKCS
 import PaymentMethodKCS from "../../Components/PaymentMethods/PaymentMethodKCS";
 import { BalanceContext } from "../../../context/BalanceContext";
 import { DataContext } from "../../../pages/collection/[collection]";
-
+// This modal is used from [collection] page
 export default function BuyTokenModal() {
-  const { KCS: KCSBal, WKCS, setKCS } = useContext(BalanceContext);
-  const { collection, setBuyTokenModal, obj, closeTxn, setLoading, item } =
-    useContext(DataContext);
+  const { KCS: KCSBal, WKCS } = useContext(BalanceContext);
+  const {
+    collection,
+    setBuyTokenModal,
+    obj,
+    closeTxn,
+    setLoading,
+    item,
+    collectionData,
+  } = useContext(DataContext);
   const { library } = useWeb3React();
   const [select, setSelect] = useState(1);
   const { salePrice, image, tokenId } = item;
@@ -26,15 +33,11 @@ export default function BuyTokenModal() {
     let _value = utils.parseEther(salePrice);
     setLoading(true);
     let txn;
-    if (select === 1) {
-      txn = await buyTokenKCS(signer, collection, tokenId, _value);
-    } else txn = await buyTokenWKCS(signer, _value, collection, tokenId);
-    let url = `${server}/api/mongo/${collection}/${tokenId}/modify?type=${FUNCTIONS.BUY}`;
-    if (txn) {
-      setKCS(KCSBal - salePrice);
-      await DELETE(url);
-      closeTxn(ACTIONS.TXN, txn);
-    } else closeTxn(ACTIONS.ERROR);
+    select === 1
+      ? (txn = await buyTokenKCS(signer, collection, tokenId, _value))
+      : (txn = await buyTokenWKCS(signer, _value, collection, tokenId));
+
+    txn ? closeTxn(ACTIONS.TXN, txn) : closeTxn(ACTIONS.ERROR);
     setBuyTokenModal(false);
   }
 
@@ -67,7 +70,7 @@ export default function BuyTokenModal() {
             className={styles.image}
           />
           <div className={styles.name}>
-            <h3>{obj.name}</h3>
+            <h3>{collectionData.name}</h3>
             <p>{item.name}</p>
           </div>
         </aside>

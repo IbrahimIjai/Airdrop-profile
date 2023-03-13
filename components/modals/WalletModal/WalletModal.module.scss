@@ -1,3 +1,4 @@
+@import "../ModalBG.module.scss";
 @mixin aButton {
   border: none;
   color: white;
@@ -81,11 +82,8 @@
 @mixin closeModal {
   display: flex;
   position: absolute;
-  color: black;
-  top: 15px;
-  height: 30px;
+  top: 0;
   align-items: center;
-  font-size: 20px;
   cursor: pointer;
   transition: transform 0.2s ease 0s;
 }
@@ -250,115 +248,116 @@
   justify-content: flex-end;
   position: fixed;
   top: 60px;
-  .closeModal {
-    @include closeModal();
-    left: 0;
-    right: 0;
-    justify-content: flex-end;
-    padding: 1rem 2rem;
-    .blockie {
-      opacity: 0.5;
+  .header {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    div {
+      position: fixed;
+      padding-right: 10px;
+      width: -webkit-fill-available;
+      .closeModal {
+        @include closeModal();
+        right: 0;
+      }
     }
   }
   .smallBoard {
-    @include internalModal();
-    width: min(100%, 300px);
-    padding: 15px;
-    padding-top: 10px;
+    @include InternalModal();
+    padding: 10px 15px 10px;
     backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    .walletBal {
-      display: flex;
+    position: relative;
+    .body {
+      overflow: auto;
+      // @include Webkit();
+      // &::-webkit-scrollbar {
+      //   width: 10px;
+      // }
       width: 100%;
-      flex-direction: column;
-      .icon {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 1rem 0;
-        gap: 1rem;
-      }
+      padding: 1rem;
     }
-    .userdetailsHead {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .items {
+      @include Flex();
       flex-direction: column;
-      .conectedText {
-        p {
-          font-size: 20px;
+      gap: 1rem;
+      .item {
+        @include Flex();
+        justify-content: space-between;
+        .itemCT {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          gap: 0.5rem;
+          .itemImage {
+            position: relative;
+            height: 80px;
+            width: 80px;
+            border-radius: 7px;
+            filter: grayscale(0);
+            overflow: hidden;
+            border: 1px solid #2fc0db;
+          }
+          .itemData {
+            display: flex;
+            gap: 0.25rem;
+            flex-direction: column;
+            p {
+              font-size: 14px;
+              opacity: 0.8;
+            }
+            h2 {
+              font-size: 1rem;
+              font-weight: 600;
+            }
+          }
+        }
+        .itemClose {
+          padding: 10px;
+          svg {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            display: block;
+          }
         }
       }
+    }
+    .empty {
+      padding-top: 20%;
+      opacity: 0.7;
+      text-align: center;
+    }
+    .UserOffersTotal {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 30px 0;
+      p {
+        display: flex;
+        gap: 5px;
+        span {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    .PaymentMethod {
+      margin: 1rem 0;
+      .container {
+        margin: 0 !important;
+      }
+      @include InlineBoxModal();
+      & > p {
+        @include TextSubHeader();
+      }
+      @include PaymentMethod();
     }
 
-    .head {
-      font-size: clamp(1.5rem, 2vw, 2rem);
-      font-weight: 600;
-      margin-bottom: 16px;
-      text-align: center;
-      letter-spacing: -0.02em;
+    hr {
+      @include Hr();
     }
-    .text {
-      font-size: clamp(1rem, 1.5vw, 1.5rem);
-      font-weight: 400;
-      margin-bottom: 30px;
-      text-align: center;
-      letter-spacing: -0.02em;
-      opacity: 0.8;
-    }
-    .userDetails {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      margin: 20px 0;
-      .address,
-      p {
-        width: 100%;
-        text-align: center;
-        font-size: clamp(0.9rem, 1rem, 1.2rem);
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        opacity: 0.8;
-      }
-      .address {
-        @include styleAddress();
-        .icons {
-          @include anIcon();
-          a {
-            display: flex;
-          }
-          span {
-            @include aSpan();
-          }
-        }
-      }
-      .balance {
-        font-size: 14px;
-        font-weight: 500;
-        padding-bottom: 10px;
-        & > span {
-          display: flex;
-          gap: 4px;
-        }
-      }
-      .balances {
-        font-size: 14px;
-        font-weight: 500;
-        margin-top: 10px;
-        & > span {
-          display: flex;
-          gap: 4px;
-        }
-      }
-      p {
-        @include Pspace();
-      }
-    }
-    button {
-      @include aButton();
+    .ExecuteTx {
+      @include ExecuteTXButton();
     }
   }
 }

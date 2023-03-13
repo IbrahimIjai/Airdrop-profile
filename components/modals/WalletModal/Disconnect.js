@@ -49,9 +49,9 @@ export default function DisconnectModal({
       >
         <div className={styles.userDetails}>
           <Blockie address={account} />
-          <Link href={`https://scan.kcc.io/address/${account ? account : ""}`}>
-            <a>
-              <h1> {slice(account)} </h1>
+          <Link href={`/profile/${account}`}>
+            <a onClick={() => setDisconnectOpen(false)}>
+              <h1> My Profile </h1>
             </a>
           </Link>
           <p className={styles.balance}>

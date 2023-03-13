@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { connectors } from "./connectors";
 import styles from "../styles/Connect.module.css";
 import { AnimatePresence } from "framer-motion";
-import { BalanceContext } from "../context/BalanceContext";
+// import { BalanceContext } from "../context/BalanceContext";
 import ConnectModal from "../components/modals/WalletModal/Connect"
 import DisconnectModal from "../components/modals/WalletModal/Disconnect";
 import Blockie from "../utils/Blockies";
@@ -11,7 +11,7 @@ export default function Connect() {
   const { active, account, chainId, activate, deactivate } = useWeb3React();
   const [showNotification, setShowNotification] = useState(false);
 
-  const { KCS, WKCS } = useContext(BalanceContext);
+  // const { KCS, WKCS } = useContext(BalanceContext);
 
   async function inChain() {
     if (!window.ethereum) {

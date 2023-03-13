@@ -2,25 +2,25 @@ import styles from "./BuyModal.module.css";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState, useEffect, useContext } from "react";
-import { buyTokenKCS, buyTokenWKCS, FUNCTIONS } from "../../NFTID/Functions";
+import { buyTokenKCS, buyTokenWKCS } from "../../NFTID/Functions";
 import { utils } from "ethers";
 import { useWeb3React } from "@web3-react/core";
 import { modal_backdrop, _modal } from "../../../utils/framermotion/NFTID";
-import { DELETE, server } from "../../../utils/utils";
 import { NFTContext } from "../../../pages/collection/[collection]/[nftId]";
 import { ACTIONS } from "../../Notifications/Notification";
 import KCS from "../../../assets/KCS";
 import PaymentMethodWKCS from "../../Components/PaymentMethods/PaymentMethodWKCS";
 import PaymentMethodKCS from "../../Components/PaymentMethods/PaymentMethodKCS";
 import { BalanceContext } from "../../../context/BalanceContext";
+// This modal is used from [collection] page
 export default function BuyModal() {
   const {
-    ipfsData,
+    saleInfo,
     collection,
     nftId,
     setLoading,
     closeTxn,
-    saleInfo,
+    tokenInfo,
     setBuyModal,
   } = useContext(NFTContext);
   const { KCS: KCSBal, WKCS, setKCS } = useContext(BalanceContext);
@@ -32,16 +32,12 @@ export default function BuyModal() {
     let _value = utils.parseEther(salePrice);
     setLoading(true);
     let txn;
-    if (select === 1) {
-      txn = await buyTokenKCS(signer, collection, nftId, _value);
-    } else txn = await buyTokenWKCS(signer, _value, collection, nftId);
-    let url = `${server}/api/mongo/${collection}/${nftId}/modify?type=${FUNCTIONS.BUY}`;
-    if (txn) {
-      setKCS(KCSBal - salePrice);
-      await DELETE(url);
-      closeTxn(ACTIONS.TXN, txn);
-    } else closeTxn(ACTIONS.ERROR);
+    select === 1
+      ? (txn = await buyTokenKCS(signer, collection, nftId, _value))
+      : (txn = await buyTokenWKCS(signer, _value, collection, nftId));
+    txn ? closeTxn(ACTIONS.TXN, txn) : closeTxn(ACTIONS.ERROR);
     setBuyModal(false);
+    setKCS(KCS - salePrice);
   }
 
   const ref = useRef();
@@ -66,15 +62,15 @@ export default function BuyModal() {
         <div>Checkout</div>
         <aside className={styles.TokenDetails}>
           <Image
-            src={ipfsData.image}
-            alt={ipfsData.name}
+            src={tokenInfo?.image}
+            alt={tokenInfo?.name}
             width="100px"
             height="100px"
             className={styles.image}
           />
           <div className={styles.name}>
-            <h3>{ipfsData.collectionName}</h3>
-            <p>{ipfsData.name}</p>
+            <h3>{saleInfo.collection}</h3>
+            <p>{tokenInfo?.name}</p>
           </div>
         </aside>
         <hr />

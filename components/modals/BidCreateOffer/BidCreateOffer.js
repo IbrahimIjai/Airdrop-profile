@@ -14,93 +14,69 @@ import PaymentMethodWKCS from "../../Components/PaymentMethods/PaymentMethodWKCS
 import { utils } from "ethers";
 import { useWeb3React } from "@web3-react/core";
 import { modal_backdrop, _modal } from "../../../utils/framermotion/NFTID";
-import { num, PUT, server } from "../../../utils/utils";
+import { num } from "../../../utils/utils";
 import { NFTContext } from "../../../pages/collection/[collection]/[nftId]";
 import { ACTIONS } from "../../Notifications/Notification";
 import { BalanceContext } from "../../../context/BalanceContext";
 export default function BidCreateOfferModal() {
   const {
-    ipfsData,
+    saleInfo,
     collection,
     nftId,
-    currentAccount,
     setBidOfferModal,
     setLoading,
     closeTxn,
-    saleInfo,
+    tokenInfo,
     bidOfferModalType,
   } = useContext(NFTContext);
-  const { KCS: KCSBal, WKCS, setKCS } = useContext(BalanceContext);
+  const { KCS: KCSBal, WKCS } = useContext(BalanceContext);
   const { library } = useWeb3React();
   const [value, setValue] = useState(0);
   const [select, setSelect] = useState(1);
   const [validity, setValidity] = useState(0);
   let days = [7, 14, 30, 60, 90];
   const { highestBid, startingBid, salePrice } = saleInfo;
-  const { collectionName, image, name } = ipfsData;
+  const { image, name } = tokenInfo;
 
   const isOfferCreate = bidOfferModalType === FUNCTIONS.CREATEOFFER;
-  console.log(highestBid, num(startingBid), value);
   async function execute() {
     if (value < 0) {
       closeTxn(ACTIONS.MESSAGE, "Value cannot be less than 0");
       setBidOfferModal(false);
-      throw new Error("Value cannot be less than 0");
     }
     const signer = await library.getSigner();
     let _value = utils.parseEther(value);
     let txn;
     setLoading(true);
     if (isOfferCreate) {
-      let dataBody = {
-        offerValue: value,
-        offerCreator: currentAccount,
-        validity: days[validity],
-      };
-      if (select === 1) {
-        txn = await createOfferKCS(
-          signer,
-          _value,
-          collection,
-          nftId,
-          days[validity]
-        );
-      } else
-        txn = await createOfferWKCS(
-          signer,
-          _value,
-          collection,
-          nftId,
-          days[validity]
-        );
-      let url = `${server}/api/mongo/${collection}/${nftId}/modify?type=${FUNCTIONS.CREATEOFFER}`;
-      console.log(txn, "TXN");
-      if (txn) {
-        setKCS(KCSBal - value);
-        await PUT(url, dataBody);
-        closeTxn(ACTIONS.TXN, txn);
-      } else closeTxn(ACTIONS.ERROR);
+      select === 1
+        ? (txn = await createOfferKCS(
+            signer,
+            _value,
+            collection,
+            nftId,
+            days[validity]
+          ))
+        : (txn = await createOfferWKCS(
+            signer,
+            _value,
+            collection,
+            nftId,
+            days[validity]
+          ));
     } else {
       if (value <= num(highestBid) || value <= num(startingBid)) {
         closeTxn(
           ACTIONS.MESSAGE,
-          "Value cannot be less than StartingBid or HighestBid"
+          "Value cannot be less than or equal to StartingBid or HighestBid"
         );
         setBidOfferModal(false);
-        throw new Error("Value cannot be less than 0");
       }
-      let bid = { bidder: currentAccount, bid: value };
-      let dataBody = { highestBid: value, highestBidder: currentAccount, bid };
-      if (select === 1) {
-        txn = await bidInKCS(signer, collection, nftId, _value);
-      } else txn = await bidInWKCS(signer, _value, collection, nftId);
-      let url = `${server}/api/mongo/${collection}/${nftId}/modify?type=${FUNCTIONS.MAKEBID}`;
-      if (txn) {
-        setKCS(KCSBal - value);
-        await PUT(url, dataBody);
-        closeTxn(ACTIONS.TXN, txn);
-      } else closeTxn(ACTIONS.ERROR);
+      select === 1
+        ? (txn = await bidInKCS(signer, collection, nftId, _value))
+        : (txn = await bidInWKCS(signer, _value, collection, nftId));
     }
+    txn ? closeTxn(ACTIONS.TXN, txn) : closeTxn(ACTIONS.ERROR);
     setBidOfferModal(false);
   }
 
@@ -133,13 +109,13 @@ export default function BidCreateOfferModal() {
             className={styles.image}
           />
           <div className={styles.name}>
-            <h3>{collectionName}</h3>
+            <h3>{saleInfo.collection}</h3>
             <p>{name}</p>
             {isOfferCreate ? (
               <p>Price: {salePrice ? salePrice : 0}KCS</p>
             ) : (
               <p>
-                {highestBid != "0.0"
+                {highestBid
                   ? `Highest Bid: ${highestBid}`
                   : `Starting Bid: ${startingBid}`}
               </p>
