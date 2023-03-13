@@ -61,7 +61,13 @@
   font-weight: 400;
   font-size: clamp(1.1rem, 1.8rem, 2vw);
 }
-
+.nav .profile p{
+  font-weight: 700;
+  color: #2fc0db;
+  font-size: .7rem;
+  position: absolute;
+  bottom: 20%;
+}
 .nav .connectBtn {
   cursor: pointer;
   color: black;

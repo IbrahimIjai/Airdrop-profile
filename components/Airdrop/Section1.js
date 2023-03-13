@@ -6,12 +6,15 @@ export default function AirdropSection_1() {
   const { active, account } = useWeb3React();
   const [points, setPoints] = useState(1);
   const getPoints = async ()=> {
-    const response = await fetch(`http://localhost:3001/api/${account}`);
+    try{
+      const response = await fetch(`http://localhost:3001/api/${account}`);
     const data = await response.json();
-    console.log(data)
-    const points = data.points
-    console.log(points)
+    const points = data.points;
     setPoints(points)
+    }catch(error){
+      
+    }
+    
   }
   useEffect(()=>{
     active && getPoints()
@@ -24,13 +27,13 @@ export default function AirdropSection_1() {
             <div>
               <p className={styles.congrats}>
                 <span>Congratualtions,</span>{" "}
-                <span>You have earned 2 Null-points</span>
+                <span>You have earned {points} Null-points</span>
               </p>
               <div className={styles.zerobtncont}>
-                <Link href="#How_to" smooth={true}>
+                <Link href="How_to_earn_null_points" smooth={true}>
                   <div className={styles.zerobbtn}>What are Null-points?</div>
                 </Link>
-                <Link href="#How_to" smooth={true}>
+                <Link href="How_to_earn_null_points" smooth={true}>
                   <div className={styles.zerobbtn}>How to earn void points</div>
                 </Link>
               </div>
@@ -42,10 +45,10 @@ export default function AirdropSection_1() {
                 <span>it looks like you have not earned any void point. </span>
               </div>
               <div className={styles.zerobtncont}>
-                <Link href="#How_to">
+                <Link href="How_to_earn_null_points">
                   <div className={styles.zerobbtn}>How to earn void points</div>
                 </Link>{" "}
-                <Link href="#How_to">
+                <Link href="How_to_earn_null_points">
                   <div className={styles.zerobbtn}>
                     Benefits of earning void points
                   </div>

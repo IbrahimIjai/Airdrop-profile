@@ -20,7 +20,7 @@ export default function MobileSideBar({ setMobileMenu }) {
     {
       id: 2,
       name: "Lending",
-      Route: "https://marketplace.distant.finance/",
+      Route: "/",
     },
     {
       id: 3,
@@ -48,15 +48,17 @@ export default function MobileSideBar({ setMobileMenu }) {
         transition={{ duration: 0.6 }}
         exit={{ x: "100vw", opacity: 0 }}
         ref={ref}
-        className={styles.card}
-      >
+        className={styles.card}>
         {Links.map((link, index) => {
           return (
-            <Link passHref key={index} href={link.Route}>
-              <a className={styles.link} onClick={() => setMobileMenu(false)}>
-                {link.name}
-              </a>
-            </Link>
+            <div key={index} style={{position: "relative", display:"flex", alignItems: "center"}}>
+              <Link passHref href={link.Route}>
+                <a className={styles.link} onClick={() => setMobileMenu(false)}>
+                  {link.name}
+                </a>
+              </Link>
+              {link.name == "Lending" && <p>coming soon!</p>}
+            </div>
           );
         })}
       </motion.div>

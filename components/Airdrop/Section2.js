@@ -19,22 +19,22 @@ export default function AirdropSection_2({ animate_ }) {
             <div className={styles.transactionDetails}>
               <div className={styles.NFTde}>
                 <div className={styles.nftimagecont}>
-                  <Image
+                  {/* <Image
                     src="/USDT.png"
                     objectFit="cover"
                     layout="fill"
                     alt="NFT Image"
-                  />
+                  /> */}
                 </div>
-                <p>Divert Art #5555</p>
+                <p></p>
               </div>
               <div className={styles.events}> 
-                <p>AuctionSale</p>
-                <p>3KCS</p>
-                <p>$20</p>
+                <p>...</p>
+                <p>...KCS</p>
+                <p>$...</p>
               </div>
               <div>
-                <p>May 27th, 2022, 6:30pm</p>
+                <p>...</p>
               </div>
             </div>
           </div>

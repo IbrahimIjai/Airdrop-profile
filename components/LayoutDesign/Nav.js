@@ -25,6 +25,7 @@ export default function Navbar({ mobileMenuHandler, mobileMenu, setOpenCart }) {
           <Link href="/">
             <a>Lending</a>
           </Link>
+          <p>Coming soon!</p>
         </div>
         <div className={styles.profile}>
           <Link href="https://docs.distant.finance/">
@@ -68,8 +69,7 @@ export default function Navbar({ mobileMenuHandler, mobileMenu, setOpenCart }) {
       <div className={styles.connect}>
         <div
           className={styles.connectBtn}
-          style={{ border: !active ? "1px solid rgb(212, 209, 209)" : "" }}
-        >
+          style={{ border: !active ? "1px solid rgb(212, 209, 209)" : "" }}>
           <Connect />
         </div>
       </div>
